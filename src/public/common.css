@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+.appContainer{
+    max-width: 414px;
+    height: 100vh;
+    background-color: #FBFBFB;
+    margin: 0 auto;
+}
+
+.container{
+    max-width: 380px;
+    margin: 0 auto;
+}

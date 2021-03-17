@@ -1,0 +1,14 @@
+.stateArea{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.calenderArea{
+margin-top: 30px;
+}
+
+.calenderArea h2{
+    font-weight: 500;
+    font-size: 16pt;
+}
