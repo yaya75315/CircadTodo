@@ -1,8 +1,10 @@
 import React from 'react'
 import StatusDisplay from '../components/StatusDisplay'
 import WeekCalender from '../components/WeekCalender'
-import '../public/common.css'
-import '../public/homePage.css'
+import '../public/css/common.css'
+import '../public/css/homePage.css'
+import arriveHome from '../public/images/arrivehome.svg'
+import sleepTime from '../public/images/sleeptime.svg'
 
 const HomePage = () => {
     console.log("HomePage");
@@ -10,8 +12,8 @@ const HomePage = () => {
         <div className="appContent">
         <div className="container">
         <div className="stateArea">
-            <StatusDisplay/>
-            <StatusDisplay/>
+            <StatusDisplay iconImg={arriveHome} statusName={'Arrive home'} time={'19:20'}/>
+            <StatusDisplay iconImg={sleepTime} statusName={'Sleep time'} time={'0:00'}/>
         </div>
         </div>
         <div className="calenderArea">
@@ -20,7 +22,7 @@ const HomePage = () => {
         </div>
         <WeekCalender/>
         </div>
-        <div className="workList"></div>
+    
      
         </div>
     )

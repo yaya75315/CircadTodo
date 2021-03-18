@@ -1,7 +1,8 @@
 import React from 'react'
-import '../public/weekCalender.css'
-import '../public/common.css'
+import '../public/css/weekCalender.css'
+import '../public/css/common.css'
 import DateHour from './DateHour'
+import DateWork from './DateWork'
 
 const WeekCalender = () => {
     console.log("WeekCalender");
@@ -22,7 +23,9 @@ const WeekCalender = () => {
             </div>
             </div>
              <div className="dayWork">
-                 
+             <div className="marginSpace"></div>
+                 <DateWork/>
+                 <DateWork/>
              </div>
         </div>
     )

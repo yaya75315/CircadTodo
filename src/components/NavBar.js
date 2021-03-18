@@ -1,6 +1,6 @@
 import React from 'react'
-import calenderIcon from '../public/calender-n.svg'
-import '../public/navBar.css'
+import calenderIcon from '../public/images/calender-n.svg'
+import '../public/css/navBar.css'
 
 const NavBar = () => {
     console.log("NavBar");

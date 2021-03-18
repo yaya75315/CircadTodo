@@ -5,7 +5,7 @@ const DateHour = ({day,date,hour}) => {
     const hourTag = hour===0 ?  "hide":"hour";
     const hourNumTag = hour===0 ?  "hideNum":"hourNum";
 
-    const contentStyle = date===13? "dataChoose":"date";
+    const contentStyle = date===15? "dataChoose":"date";
 
     const dayStyle = contentStyle==="dataChoose" ? "dayChooseStyle" : "day"; 
     const dateStyle = contentStyle==="dataChoose" ? "dateChooseStyle" : "dateNormal";

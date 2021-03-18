@@ -1,0 +1,34 @@
+.tabBar{
+    width: 100%;
+    background-color: #FAFAFA;
+    height: 75px;
+    /* position: absolute;
+    bottom: 0; */
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.workTab, .lightingTab , .settingTab{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workTab p, .lightingTab p, .settingTab p{
+    font-size: 13px;
+    color: #286BB3;
+    font-weight: 500;
+}
+
+.workTab{
+    margin-left: 36px;
+}
+
+.settingTab{
+    margin-right: 36px;
+}
+
+.lightingTab p, .settingTab p{
+    color: transparent;
+}

@@ -1,0 +1,48 @@
+.workContainer{
+    width: 380px;
+    height: 68px;
+    border-radius: 18px;
+    display:flex;
+    margin-top: 18px;
+    justify-content: space-between;
+}
+
+#workID{
+    background-color: #FFBD00;
+}
+
+#yellow{ background-color: #FFBD00;}
+#blue{
+     background-color: #00C8D3;
+}
+
+.marginSpace{
+    display:inline-block;
+    margin-top: 9px;
+}
+
+.workImg{
+   margin-left: 24px;
+}
+
+.workContent{
+   margin-left: 9px;
+}
+
+.workContent p ,.timeArea p{
+   font-size: 12pt;
+   color: #fff;
+   font-weight: 500;
+}
+
+.workArea{
+    display: flex;
+    align-items: center;
+}
+
+.timeArea{
+    display: flex;
+    align-items: center;
+    margin-right: 42px;
+}
+
