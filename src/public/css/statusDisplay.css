@@ -1,31 +1,63 @@
-.statusContainer{
+.statusContainer {
+  width: 162px;
+  height: 76px;
+  background-color: #fff;
+  box-shadow: #eee;
+  box-shadow: 0 0 10px 0 #e5e7e8;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.statusImg {
+  padding-left: 21px;
+  align-items: center;
+}
+
+.statusTime {
+  padding-left: 16px;
+}
+
+.statusTime p:nth-child(1) {
+  font-size: 16px;
+}
+
+.statusTime p:nth-child(2) {
+  color: #286bb3;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 372px) {
+  .statusContainer {
+    width: 155px;
+    height: 80px;
+  }
+
+  .statusTime p:nth-child(1) {
+    font-size: 15px;
+  }
+
+  .statusTime p:nth-child(2) {
+    color: #286bb3;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 411px) {
+  .statusContainer {
     width: 180px;
-    height: 76px;
-    background-color: #fff;
-    box-shadow: #eee;
-    box-shadow: 0 0 10px 0 #E5E7E8;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    
-}
+    height: 80px;
+  }
 
-.statusImg{
-    padding-left: 21px;
-    align-items: center;
-    
-}
+  .statusTime p:nth-child(1) {
+    font-size: 17px;
+  }
 
-.statusTime{
-    padding-left: 16px;
-}
-
-.statusTime p:nth-child(1){
-
-font-size: 13pt;
-}
-
-.statusTime p:nth-child(2){
-color: #286BB3;
-font-weight: 300;
+  .statusTime p:nth-child(2) {
+    color: #286bb3;
+    font-weight: 300;
+    font-size: 15px;
+  }
 }

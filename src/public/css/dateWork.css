@@ -1,10 +1,10 @@
 .workContainer{
-    width: 380px;
+    width: 100%;
     height: 68px;
     border-radius: 18px;
     display:flex;
-    margin-top: 18px;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 #workID{
@@ -15,11 +15,11 @@
 #blue{
      background-color: #00C8D3;
 }
-
-.marginSpace{
-    display:inline-block;
-    margin-top: 9px;
+#green{
+    background-color: #CFDC38;
 }
+
+
 
 .workImg{
    margin-left: 24px;

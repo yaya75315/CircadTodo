@@ -1,34 +1,44 @@
-.tabBar{
-    width: 100%;
-    background-color: #FAFAFA;
-    height: 75px;
-    /* position: absolute;
+.tabBar {
+  width: 100%;
+  max-height: 62px;
+  background-color: #fafafa;
+  /* position: absolute;
     bottom: 0; */
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  padding-bottom: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-.workTab, .lightingTab , .settingTab{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.workTab,
+.lightingTab,
+.settingTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.workTab p, .lightingTab p, .settingTab p{
-    font-size: 13px;
-    color: #286BB3;
-    font-weight: 500;
+.workTab p,
+.lightingTab p,
+.settingTab p {
+  font-size: 13px;
+  color: #286bb3;
+  font-weight: 500;
 }
 
-.workTab{
-    margin-left: 36px;
+.workTab {
+  margin-left: 36px;
 }
 
-.settingTab{
-    margin-right: 36px;
+.settingTab {
+  margin-right: 36px;
 }
 
-.lightingTab p, .settingTab p{
-    color: transparent;
+.lightingTab p,
+.settingTab p {
+  color: transparent;
 }

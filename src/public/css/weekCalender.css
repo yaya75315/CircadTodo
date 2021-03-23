@@ -1,126 +1,131 @@
-.weekCalender{
-    margin-top: 16px;
-
-}
-.dayWeek{
-    display: flex;
-    justify-content: space-around;
+.weekCalender {
+  margin-top: 16px;
 }
 
-.weekCalender p{
-    font-weight: 300;
-    font-size: 14pt;
+.dayWeek {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 
-
-.date{
-    width: 38px;
-    height: 144px;
-    /* background-color: #fff; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-     margin-top: 18px;
-     border-radius: 20px 20px 0 0;
+.monthBar {
+  display: flex;
+  justify-content: space-between;
 }
 
-.dataChoose{
-    width: 38px;
-    height: 144px;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 18px;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 20px -10px 20px -14px #E5E8EA,-20px -10px 20px -14px #E5E8EA,0 -12px 20px -10px #E5E8EA;
+.monthBar p {
+  font-weight: 300;
+  font-size: 14pt;
 }
 
+.date {
+  width: 38px;
+  height: 144px;
+  /* background-color: #fff; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.dateContent{
-
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
+  border-radius: 20px 20px 0 0;
 }
 
+.dataChoose {
+  width: 38px;
+  height: 144px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.dateContent .day{
-    /* color: #A9BBC9; */
-    color: #E4EAEE;
-    font-size: 12pt;
-} 
-.dateContent .dateNormal{
-    /* color: #286BB3; */
-    color: #A9BBC9;
-    font-size: 14pt;
-    font-weight: 400;
-} 
-
-.dateContent .hourNum{
-    color: #AAAAAA;
-    font-size: 14pt;
-    font-weight: 400;
-} 
-
-.dateContent .hour{
-    color: #3D3834;
-    font-size: 10pt;
-    font-weight: 200;
-} 
-
-.dot{
-    width: 4px;
-    height: 4px;
-    border-radius: 10px;
-    /* background-color: #FFC926; */
-    background-color: #3D3834;
-    margin:8px 0;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 20px -10px 20px -14px #e5e8ea, -20px -10px 20px -14px #e5e8ea,
+    0 -12px 20px -10px #e5e8ea;
 }
 
-.dotChooseStyle{
-    width: 4px;
-    height: 4px;
-    border-radius: 10px;
-    /* background-color: #FFC926; */
-    background-color: #FFC926;
-    margin:8px 0;
+.dateContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.dateContent .hideNum{
-    color: transparent;
-    font-size: 14pt;
-    font-weight: 400;
+.dateContent .day {
+  /* color: #A9BBC9; */
+  color: #e4eaee;
+  font-size: 12pt;
+}
+.dateContent .dateNormal {
+  /* color: #286BB3; */
+  color: #a9bbc9;
+  font-size: 14pt;
+  font-weight: 400;
 }
 
-.dateContent .hide{
-    color: transparent;
-    font-size: 10pt;
-    font-weight: 400;
+.dateContent .hourNum {
+  color: #aaaaaa;
+  font-size: 14pt;
+  font-weight: 400;
 }
 
-.dayWork{
-    width: 100%;
-    height: 330px;
-    background-color: #fff;
-    box-shadow: 0px -15px 30px -15px #E5E8EA;
+.dateContent .hour {
+  color: #3d3834;
+  font-size: 10pt;
+  font-weight: 200;
 }
 
-.dateContent .dayChooseStyle{
-    color: #A9BBC9;
-    font-size: 13pt;
-    font-weight: 400;
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  /* background-color: #FFC926; */
+  background-color: #3d3834;
+  margin: 8px 0;
 }
 
-.dateContent .dateChooseStyle{
-  color: #286BB3;
-    font-size: 14pt;
-    font-weight: 400;
+.dotChooseStyle {
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  /* background-color: #FFC926; */
+  background-color: #ffc926;
+  margin: 8px 0;
 }
 
-.dateContent .hourChooseStyle{
-    color: #000;
-    font-size: 14pt;
-    font-weight: 400;
+.dateContent .hideNum {
+  color: transparent;
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+.dateContent .hide {
+  color: transparent;
+  font-size: 10pt;
+  font-weight: 400;
+}
+
+.dayWork {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #fff;
+  box-shadow: 0px -15px 30px -15px #e5e8ea;
+  overflow: scroll;
+  height: 250px;
+}
+
+.dateContent .dayChooseStyle {
+  color: #a9bbc9;
+  font-size: 13pt;
+  font-weight: 400;
+}
+
+.dateContent .dateChooseStyle {
+  color: #286bb3;
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+.dateContent .hourChooseStyle {
+  color: #000;
+  font-size: 14pt;
+  font-weight: 400;
 }
