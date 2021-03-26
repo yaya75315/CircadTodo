@@ -17,6 +17,7 @@ const HomePage = () => {
             statusName={"Arrive time"}
             time={"19:20"}
           />
+          <div className="spacingBlock"></div>
           <StatusDisplay
             iconImg={sleepTime}
             statusName={"Sleep time"}
