@@ -9,12 +9,12 @@ import DateSetting from "./viewpages/DateSetting";
 function App() {
   return (
     <div className="appContainer">
-      {/* <div className="container">
+      <div className="container">
         <NavBar />
-      </div> */}
-      {/* <HomePage />
-      <TabBar /> */}
-      <DateSetting />
+      </div>
+      <HomePage />
+      <TabBar />
+      {/* <DateSetting /> */}
     </div>
   );
 }

@@ -48,17 +48,23 @@ const WeekCalender = () => {
     }
   }
 
+  for (var i = 0; i < weekDay.length; i++) {
+    if (todayDate[i] > 31) {
+      todayDate[i] = todayDate[i] - 31;
+    }
+  }
+
   return (
     <div className="weekCalender">
       <div className="container">
         <div className="monthBar">
-          {/* <a href="###">
-            <img src={leftIcon} alt="" />
-          </a> */}
+          <div>
+            <img src={leftIcon} alt="leftIcon" />
+          </div>
           <p>{month[todayMonth()]}</p>
-          {/* <a href="###">
+          <a href="###">
             <img src={rightIcon} alt="" />
-          </a> */}
+          </a>
         </div>
         <div className="dayWeek">
           <DateHour

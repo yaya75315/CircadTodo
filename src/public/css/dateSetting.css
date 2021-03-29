@@ -47,9 +47,9 @@
   height: 20px;
 }
 
-.container p:nth-child(3),
-.container p:nth-child(5),
-.container p:nth-child(7) {
+.settingContainer p:nth-child(3),
+.settingContainer p:nth-child(5),
+.settingContainer p:nth-child(7) {
   color: #286bb3;
   font-size: 19px;
   margin-top: 19px;

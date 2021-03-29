@@ -10,7 +10,7 @@ const DateSetting = () => {
   const [value, onChange] = useState(new Date());
   return (
     <div className="dateSetting">
-      <div className="container">
+      <div className="container settingContainer">
         <div className="dateSettingBar">
           <img src={closeIcon} alt="" />
           <p>Save</p>
@@ -33,7 +33,7 @@ const DateSetting = () => {
         </div>
         <p>Set work hours for each day</p>
         <div className="datePicker">
-          <Calendar onChange={onChange} value={value} />
+          <Calendar onChange={onChange} onc value={value} />
         </div>
       </div>
     </div>
