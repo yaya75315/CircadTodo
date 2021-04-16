@@ -20,3 +20,7 @@ div::-webkit-scrollbar {
 .container {
   padding: 0 17px;
 }
+
+a {
+  text-decoration: none;
+}

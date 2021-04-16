@@ -11,3 +11,7 @@
 .navBar h1 {
   font-weight: 400;
 }
+
+.navBar .none {
+  display: none;
+}

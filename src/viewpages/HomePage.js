@@ -7,7 +7,6 @@ import arriveHome from "../public/images/arrivehome.svg";
 import sleepTime from "../public/images/sleeptime.svg";
 
 const HomePage = () => {
-  console.log("HomePage");
   return (
     <div className="appContent">
       <div className="container">

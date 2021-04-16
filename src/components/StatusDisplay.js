@@ -3,7 +3,6 @@ import "../public/css/statusDisplay.css";
 import arriveHome from "../public/images/arrivehome.svg";
 
 const StatusDisplay = ({ iconImg, statusName, time }) => {
-  console.log("status");
   // const homeIcon = arriveHome;
   // const statusName ="Arrive home"
   // const time = "19:30"

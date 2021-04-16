@@ -1,0 +1,10 @@
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.itemContainer p:nth-child(2) {
+  color: #00c8d3;
+  padding-right: 22px;
+}

@@ -3,7 +3,6 @@ import "../public/css/dateWork.css";
 import noteIcon from "../public/images/noteIcon.svg";
 
 const DateWork = ({ backGroundColor, workContent, workHour }) => {
-  console.log("DateWork");
   return (
     <div className="container">
       <div className="workContainer" id={backGroundColor}>
