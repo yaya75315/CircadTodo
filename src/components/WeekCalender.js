@@ -32,10 +32,10 @@ const WeekCalender = () => {
   };
 
   // function getMonthLastDayWeek(year, month) {
-  //   let lastDay = getMonthDayTotal(year, month); //用總共的天數作為每個月最後一日的日期
-  //   let d = new Date(year, month, lastDay);
-  //   return d.getDay();
-  // }
+  // let lastDay = getMonthDayTotal(year, month); //用總共的天數作為每個月最後一日的日期
+  // let d = new Date(year, month, lastDay);
+  // return d.getDay();
+  //  }
 
   const todayMonth = () => {
     return Today.getMonth();
@@ -46,52 +46,69 @@ const WeekCalender = () => {
   let contentStyle = [];
   let todayDate = [];
   let myDate = Today.getDate();
+  let calendarMonth = Today.getMonth();
 
+  const [weeklyMonth, setWeeklyMonth] = useState(calendarMonth);
   const [weeklyDate, setWeeklyDate] = useState(todayDate);
   const [dateStyle, setDateStyle] = useState(contentStyle);
+
+  let lastDay = getMonthDayTotal(2021, weeklyMonth + 1);
 
   const refreshDate = () => {
     for (var i = 0, j = 1; i < weeklyDay.Day.length; i++) {
       let x = todayDay - i;
+      let jFlag = false;
       if (todayDay > i) {
         contentStyle[i] = "date";
         todayDate[i] = Today.getDate() - x;
       } else if (todayDay < i) {
         contentStyle[i] = "date";
         todayDate[i] = Today.getDate() + j;
+        const jNumber =
+          todayDate[i] > lastDay ? todayDate[i] - lastDay : Today.getDate() + j;
+        todayDate[i] = jNumber;
         j++;
-      } else if (todayDay === i) {
+      } else if (todayDay === i && weeklyMonth == calendarMonth) {
         contentStyle[i] = "dataChoose";
         todayDate[i] = Today.getDate();
       }
     }
-
-    for (var i = 0; i < weeklyDay.Day.length; i++) {
-      if (todayDate[i] > 31) {
-        todayDate[i] = todayDate[i] - 31;
-      }
-    }
   };
   refreshDate();
-
-  console.log(weeklyDate);
+  console.log(lastDay);
+  console.log(todayDate[6]);
 
   const rightIconOnClick = () => {
-    let b = weeklyDate.map((e) => {
-      return e + 7;
-    });
+    let newFlag = false;
+    // let d = [];
+    let c = [1];
+    //let b = [2, 3, 4, 5, 6, 7, 8];
+    let b = [];
+    // let b = weeklyDate.map((e) => {
+    //   return e + 7;
+    // });
+
+    for (let i = 0, j = 1; i < weeklyDay.Day.length; i++) {
+      b[i] = todayDate[6] + j;
+      j++;
+    }
 
     let newStyle = ["date", "date", "date", "date", "date", "date", "date"];
 
     for (var i = 0; i < weeklyDay.Day.length; i++) {
-      if (b[i] === myDate) {
+      if (b[i] == myDate && weeklyMonth == calendarMonth) {
         newStyle[i] = "dataChoose";
+      } else if (b[i] > lastDay) {
+        c[i] = c[0] + i;
       }
+      b[i] = b[i] + 1;
     }
 
-    setWeeklyDate(b);
+    const nextMonthDate = newFlag == true ? setWeeklyDate(c) : setWeeklyDate(b);
+    const nextMonth =
+      newFlag == true ? setWeeklyMonth((prev) => prev + 1) : "none";
+
     setDateStyle(newStyle);
-    //console.log(weeklyDate);
   };
 
   const leftIconOnClick = () => {
@@ -127,7 +144,7 @@ const WeekCalender = () => {
           <div>
             <img src={leftIcon} alt="leftIcon" onClick={leftIconOnClick} />
           </div>
-          <p>{month[todayMonth()]}</p>
+          <p>{month[weeklyMonth]}</p>
           <a href="###" onClick={rightIconOnClick}>
             <img src={rightIcon} alt="" />
           </a>

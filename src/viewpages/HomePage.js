@@ -1,6 +1,7 @@
 import React from "react";
 import StatusDisplay from "../components/StatusDisplay";
 import WeekCalender from "../components/WeekCalender";
+import WorkingTime from "../components/WorkingTime";
 import "../public/css/common.css";
 import "../public/css/homePage.css";
 import arriveHome from "../public/images/arrivehome.svg";
@@ -28,7 +29,8 @@ const HomePage = () => {
         <div className="container">
           <h2>Working time</h2>
         </div>
-        <WeekCalender />
+        {/* <WeekCalender /> */}
+        <WorkingTime />
       </div>
     </div>
   );

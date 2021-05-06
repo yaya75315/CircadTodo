@@ -8,7 +8,7 @@ import lightingIconPress from "../public/images/lightingIcon-p.svg";
 import settingIconPress from "../public/images/settingIcon-p.svg";
 
 import { Link } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
 const TabBar = ({ title, now_location, setTitleState }) => {
   let workImg = workIconPress;
   let lightingImg = lightingIconNormal;
@@ -17,53 +17,57 @@ const TabBar = ({ title, now_location, setTitleState }) => {
   const [workState, setWorkState] = useState(workImg);
   const [lightingState, setLightingState] = useState(lightingImg);
   const [settingState, setSettingState] = useState(settingImg);
-
-  const titleChange = () => {
-    if (now_location === "/LightingPage") {
-      title = "Lighting";
-    } else if (now_location === "/") {
-      title = "Today";
-    } else if (now_location === "/SettingPage") {
-      title = "Setting";
-    }
-    setTitleState(title);
-  };
-
-  useEffect(() => {
-    if (now_location === "/LightingPage") {
+  const history = useHistory();
+  const titleChange = (router) => {
+    setTitleState((pre) => {
+      let tmpTitle = "Lighting";
+      if (router == "/LightingPage") {
+        tmpTitle = "Lighting";
+      } else if (router == "/") {
+        tmpTitle = "Today";
+      } else if (router == "/SettingPage") {
+        tmpTitle = "Setting";
+      }
+      return tmpTitle;
+    });
+    if (router === "/LightingPage") {
       workImg = workIconNormal;
       lightingImg = lightingIconPress;
       settingImg = settingIconNormal;
-    } else if (now_location === "/") {
-      workImg = workIconPress;
-      lightingImg = lightingIconNormal;
-      settingImg = settingIconNormal;
-    } else if (now_location === "/SettingPage") {
+      console.log("settingImg0");
+    } else if (router === "/SettingPage") {
       workImg = workIconNormal;
       lightingImg = lightingIconNormal;
       settingImg = settingIconPress;
+      console.log("settingImg1");
+    } else if (router === "/") {
+      workImg = workIconPress;
+      lightingImg = lightingIconNormal;
+      settingImg = settingIconNormal;
+      console.log("settingImg2");
     }
     setLightingState(lightingImg);
     setWorkState(workImg);
     setSettingState(settingImg);
-  }, []);
+    history.push(router);
+  };
 
   return (
     <div className="tabBar">
-      <Link to="/" className="workTab" onClick={titleChange()}>
+      <div className="workTab" onClick={() => titleChange("/")}>
         <img src={workState} alt="" />
         <p>Work</p>
-      </Link>
+      </div>
 
-      <Link to="/LightingPage" className="lightingTab" onClick={titleChange}>
+      <div className="lightingTab" onClick={() => titleChange("/LightingPage")}>
         <img src={lightingState} alt="" />
         <p>Lighting</p>
-      </Link>
+      </div>
 
-      <Link to="/SettingPage" className="settingTab" onClick={titleChange}>
+      <div className="settingTab" onClick={() => titleChange("/SettingPage")}>
         <img src={settingState} alt="" />
         <p>setting</p>
-      </Link>
+      </div>
     </div>
   );
 };

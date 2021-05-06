@@ -1,0 +1,142 @@
+.calendar {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+.weekCalendar {
+  margin-bottom: 115px;
+}
+
+.calendar .header {
+  text-align: center;
+  min-height: 2rem;
+  line-height: 2rem;
+  color: var(--black);
+  font-family: var(--font-book);
+  font-weight: 300;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.calendar .day-names {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.day-workHour,
+.hour {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.calendar .header .previous {
+  flex: 1;
+  text-align: left;
+  margin-left: 1.2rem;
+}
+
+.calendar .header .next {
+  flex: 1;
+  text-align: right;
+  margin-right: 1.2rem;
+}
+
+.calendar .week {
+  height: 44px;
+  line-height: 44px;
+  width: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar .week div {
+  width: 100%;
+}
+
+.dayContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar .day {
+  width: 34px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.calendar .day-workHour {
+  color: #aaaaaa;
+  font-size: 13pt;
+  font-weight: 300;
+}
+
+.calendar .hour {
+  color: #3d3834;
+  font-size: 10pt;
+  font-weight: 200;
+  padding-bottom: 10px;
+}
+
+.calendar .day {
+  /* color: #286BB3; */
+  color: #a9bbc9;
+  font-size: 14pt;
+  font-weight: 400;
+}
+
+.calendar .day-names {
+  /* color: #A9BBC9; */
+  color: #e4eaee;
+  font-size: 12pt;
+}
+
+.calendar .day div.before {
+  color: var(--grey);
+}
+
+.calendar .day div.selected {
+  background-color: #fff;
+  color: #286bb3;
+  font-size: 14pt;
+  font-weight: 400;
+  box-shadow: 10px -5px 10px -7px #e5e8ea, -10px -5px 10px -7px #e5e8ea,
+    0 -6px 10px -5px #e5e8ea;
+  border-radius: 25px 25px 0 0;
+}
+
+div.selected .day-names {
+  color: #a9bbc9;
+}
+
+.calendar .day div.today {
+  color: #286bb3;
+}
+
+.Every-dot {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  /* background-color: #FFC926; */
+  background-color: #3d3834;
+  margin: 8px 0;
+}
+
+div.selected .dot {
+  background-color: #ffc926;
+}
+
+div.selected .day-workHour {
+  color: #000;
+}
+
+.hourArea {
+  display: flex;
+  justify-content: space-around;
+}
