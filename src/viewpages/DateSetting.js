@@ -2,16 +2,21 @@ import React, { useState } from "react";
 import "../public/css/dateSetting.css";
 import "../public/css/common.css";
 import closeIcon from "../public/images/closeIcon.svg";
-import Calendar from "react-calendar";
+//import { NewCalendar } from "../components/NewCalendar";
 import "react-calendar/dist/Calendar.css";
 
-const DateSetting = () => {
-  const [value, onChange] = useState(new Date());
+const DateSetting = ({ setNewWorking }) => {
   return (
     <div className="dateSetting">
       <div className="container settingContainer">
         <div className="dateSettingBar">
-          <img src={closeIcon} alt="" />
+          <div
+            onClick={() => {
+              setNewWorking(false);
+            }}
+          >
+            <img src={closeIcon} alt="" />
+          </div>
           <p>Save</p>
         </div>
         <div className="nameInput">
@@ -31,9 +36,7 @@ const DateSetting = () => {
           <p>hr</p>
         </div>
         <p>Set work hours for each day</p>
-        <div className="datePicker">
-          <Calendar onChange={onChange} onc value={value} />
-        </div>
+        <div className="datePicker"></div>
       </div>
     </div>
   );

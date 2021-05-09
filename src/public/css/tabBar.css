@@ -22,12 +22,8 @@
   align-items: center;
 }
 
-.workTab p,
-.lightingTab p,
-.settingTab p {
-  font-size: 13px;
-  color: #286bb3;
-  font-weight: 500;
+.normalState {
+  color: transparent;
 }
 
 .workTab {
@@ -38,7 +34,18 @@
   margin-right: 36px;
 }
 
-.lightingTab p,
-.settingTab p {
-  color: transparent;
+.workTabName p {
+  font-size: 13px;
+  color: #286bb3;
+  font-weight: 500;
+}
+.lightingTabName p {
+  font-size: 13px;
+  color: #286bb3;
+  font-weight: 500;
+}
+.settingTabName p {
+  font-size: 13px;
+  color: #286bb3;
+  font-weight: 500;
 }

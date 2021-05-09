@@ -3,28 +3,22 @@ import moment from "moment";
 import buildCalendar from "./buildCal";
 import dayStyle, { beforeToday } from "./DayStyle";
 import DateWork from "./DateWork";
+import eventData from "../public/workingData.json";
 import WorkingHour from "./WorkingHour";
 import "../public/css/workingStyle.css";
 import "../public/css/common.css";
-//import "../public/css/weekCalender.css";
 
 function WorkingTime() {
-  console.log("All calendar");
   const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
-
-  const Num = [0, 1, 2, 0, 5, 6, 0];
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
 
   const hours = {
-    1: 0,
-    2: 2,
     3: 3,
     4: 4,
     5: 2,
     6: 3,
     7: 2,
-    8: 2,
     9: 1,
     10: 2,
     11: 2,
@@ -41,7 +35,6 @@ function WorkingTime() {
     22: 1,
     23: 3,
     24: 2,
-    25: 3,
     26: 1,
     27: 2,
     28: 1,
@@ -99,7 +92,7 @@ function WorkingTime() {
                   {week.map((day) => (
                     <div onClick={() => !beforeToday(day) && setValue(day)}>
                       <div className="day">
-                        <div className={dayStyle(day, value)}>
+                        <div className={dayStyle(day, value, hours)}>
                           <div className="day-names">
                             <div className="week">
                               {weeks[day.weekday().toString()]}
@@ -121,15 +114,11 @@ function WorkingTime() {
       </div>
       <div className="dayWork">
         <div className="marginSpace"></div>
-        <DateWork
-          backGroundColor={"yellow"}
-          workContent={"Paper draft for ICCE-TW"}
-          workHour={4}
-        />
+
         <DateWork
           backGroundColor={"blue"}
-          workContent={"Paper draft for ICCE-TW"}
-          workHour={3}
+          workContent={"Paper draft for ICCE-Tw"}
+          workHour={2}
         />
       </div>
     </div>

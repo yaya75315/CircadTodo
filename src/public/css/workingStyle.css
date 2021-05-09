@@ -6,6 +6,15 @@
   margin-bottom: 115px;
 }
 
+.dayWork {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #fff;
+  box-shadow: 0px -15px 30px -15px #e5e8ea;
+  overflow: scroll;
+  height: 270px;
+}
+
 .calendar .header {
   text-align: center;
   min-height: 2rem;
@@ -60,7 +69,7 @@
 }
 
 .calendar .day {
-  width: 34px;
+  width: 30px;
   height: 30px;
   align-items: center;
   text-align: center;
@@ -106,7 +115,22 @@
   border-radius: 25px 25px 0 0;
 }
 
+.calendar .day div.selectedNull {
+  background-color: #fff;
+  color: #286bb3;
+  font-size: 14pt;
+  font-weight: 400;
+  box-shadow: 10px -5px 10px -7px #e5e8ea, -10px -5px 10px -7px #e5e8ea,
+    0 -6px 10px -5px #e5e8ea;
+  border-radius: 25px 25px 0 0;
+  padding-bottom: 45px;
+}
+
 div.selected .day-names {
+  color: #a9bbc9;
+}
+
+div.selectedNull .day-names {
   color: #a9bbc9;
 }
 
@@ -128,7 +152,8 @@ div.selected .day-names {
   margin: 8px 0;
 }
 
-div.selected .dot {
+div.selected .dot,
+div.selectedNull .dot {
   background-color: #ffc926;
 }
 

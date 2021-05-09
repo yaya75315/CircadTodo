@@ -1,0 +1,35 @@
+{
+    "2021-05-07":[
+        {
+        "eventColor":"blue",
+        "eventName":"Paper draft for ICCE-Tw",
+        "eventHour":"3"
+        },{
+        "eventColor":"green",
+        "eventName":"Paper draft for ICCE-Tw",
+        "eventHour":"2"
+        }
+    ],
+    "2021-05-10":[
+         {
+        "eventColor":"yellow",
+        "eventName":"Paper draft for ICCE-Tw",
+        "eventHour":"4"
+        },{
+        "eventColor":"blue",
+        "eventName":"Paper draft for ICCE-Tw",
+        "eventHour":"1"
+        }
+    ],
+    "2021-05-11":[
+         {
+        "eventColor":"green",
+        "eventName":"Paper draft for ICCE-Tw",
+        "eventHour":"2"
+        },{
+        "eventColor":"yellow",
+        "eventName":"Paper draft for ICCE-Tw",
+        "eventHour":"3"
+        }
+    ]
+}

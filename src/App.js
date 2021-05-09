@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import HomePage from "./viewpages/HomePage";
 import LightingPage from "./viewpages/LightingPage";
 import SettingPage from "./viewpages/SettingPage";
+import DateSetting from "./viewpages/DateSetting";
 
 import {
   Switch,
@@ -25,25 +26,32 @@ function App() {
   let now_location = location.pathname;
   let title = "Today";
   const [titleState, setTitleState] = useState(title);
+  const [newWorking, setNewWorking] = useState(false);
 
   const iconStatus = titleState != "Today" ? "none" : "navBarIcon";
   const history = useHistory();
 
   return (
     <div className="appContainer">
+      <div className="add-newWorking">
+        {newWorking ? <DateSetting setNewWorking={setNewWorking} /> : null}
+        {console.log(newWorking)}
+      </div>
       <HashRouter>
         <div className="container">
-          <NavBar title={titleState} iconStatus={iconStatus} />
+          <NavBar
+            title={titleState}
+            iconStatus={iconStatus}
+            setNewWorking={setNewWorking}
+          />
         </div>
-        <div>
-          <div className={"insideContent"}>
-            <Switch>
-              <Route path="/" exact component={HomePage} />
-              <Route path="/LightingPage" component={LightingPage} />
-              <Route path="/SettingPage" component={SettingPage} s />
-            </Switch>
-          </div>
-        </div>
+
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/LightingPage" component={LightingPage} />
+          <Route path="/SettingPage" component={SettingPage} />
+        </Switch>
+
         <TabBar setTitleState={setTitleState} title={title} />
       </HashRouter>
     </div>

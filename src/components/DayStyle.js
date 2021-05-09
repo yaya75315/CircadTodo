@@ -10,9 +10,15 @@ function isToday(day) {
   return day.isSame(new Date(), "day");
 }
 
-export default function dayStyle(day, value) {
+function NumStyle(day, hours, value) {
+  return hours[day.format("D").toString()] == null && value.isSame(day, "day");
+}
+
+export default function dayStyle(day, value, hours) {
   if (beforeToday(day)) return "before";
+  if (NumStyle(day, hours, value)) return "selectedNull";
   if (isSelected(day, value)) return "selected";
   if (isToday(day)) return "today";
+
   return "";
 }

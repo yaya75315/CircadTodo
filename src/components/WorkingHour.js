@@ -10,7 +10,7 @@ function WorkingHour({ Num }) {
         <div>{Num}</div>
       </div>
       <div className="hour">
-        <div>hr</div>
+        <div> {Num == null ? null : "hr"}</div>
       </div>
     </div>
   );
