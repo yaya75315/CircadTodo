@@ -9,7 +9,7 @@ import settingIconPress from "../public/images/settingIcon-p.svg";
 
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-const TabBar = ({ setTitleState }) => {
+const TabBar = ({ setTitleState, setNewWorking, newWorking }) => {
   let workImg = workIconPress;
   let lightingImg = lightingIconNormal;
   let settingImg = settingIconNormal;
@@ -71,8 +71,14 @@ const TabBar = ({ setTitleState }) => {
     history.push(router);
   };
 
+  const closeDateWindow = () => {
+    if (newWorking == true) {
+      setNewWorking(false);
+    }
+  };
+
   return (
-    <div className="tabBar">
+    <div className="tabBar" onClick={closeDateWindow}>
       <div className="workTab" onClick={() => titleChange("/")}>
         <img src={workState} alt="" />
         <div className={workName}>

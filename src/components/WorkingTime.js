@@ -3,7 +3,6 @@ import moment from "moment";
 import buildCalendar from "./buildCal";
 import dayStyle, { beforeToday } from "./DayStyle";
 import DateWork from "./DateWork";
-import eventData from "../public/workingData.json";
 import WorkingHour from "./WorkingHour";
 import "../public/css/workingStyle.css";
 import "../public/css/common.css";

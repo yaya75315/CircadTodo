@@ -1,0 +1,128 @@
+.monthCalendar {
+  box-sizing: border-box;
+  font-size: 1rem;
+  max-width: 300px;
+}
+
+.monthCalendar .header {
+  background-color: var(--light-blue);
+  text-align: center;
+  min-height: 2rem;
+  line-height: 2rem;
+  color: var(--black);
+  font-family: var(--font-book);
+  font-weight: 700;
+  display: flex;
+}
+
+.monthCalendar .day-names {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.monthCalendar .body {
+  border: 1px solid var(--light-blue);
+}
+
+.monthCalendar .header .previous {
+  flex: 1;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.monthCalendar .header .next {
+  flex: 1;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.monthCalendar .day {
+  font-size: 17px;
+  position: relative;
+  width: calc(100% / 7);
+  height: 34px;
+  display: inline-block;
+  background-color: white;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  z-index: 1;
+  text-align: center;
+}
+
+.monthCalendar .day div {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  color: var(--black);
+  z-index: 100;
+  line-height: 20px;
+}
+
+.monthCalendar .day div.before {
+  color: var(--grey);
+}
+
+.monthCalendar .day div.selected {
+  color: palevioletred;
+  font-weight: bold;
+}
+
+.monthCalendar .day div.today {
+  background-color: var(--grey);
+}
+
+.monthCalendar .day .oldHours {
+  font-size: 10px;
+  line-height: 16px;
+  width: 20px;
+  height: 16px;
+  text-align: center;
+  vertical-align: top;
+  border-radius: 20px;
+  background-color: khaki;
+  color: sienna;
+}
+
+.monthCalendar .hourInput input:nth-child(1) {
+  border: none;
+  background-color: slategray;
+  width: 300px;
+  justify-content: center;
+  color: #fff;
+  padding-left: 20px;
+}
+
+.monthCalendar .hourInput input:nth-child(2) {
+  border: none;
+  color: #fff;
+  background-color: transparent;
+  position: absolute;
+  right: 12px;
+  height: 40px;
+  font-weight: 500;
+}
+
+.monthCalendar .hourInput {
+  position: relative;
+  display: flex;
+
+  height: 40px;
+}
+
+.monthCalendar .noneInput {
+  display: none;
+}
+
+.monthCalendar .triangle {
+  position: absolute;
+  top: 45px;
+  right: 15px;
+}
+
+.monthCalendar .triangleNone {
+  display: none;
+}
