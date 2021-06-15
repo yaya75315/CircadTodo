@@ -4,26 +4,21 @@
   max-width: 300px;
 }
 
-.monthCalendar .header {
-  background-color: var(--light-blue);
-  text-align: center;
-  min-height: 2rem;
-  line-height: 2rem;
-  color: var(--black);
-  font-family: var(--font-book);
-  font-weight: 700;
-  display: flex;
-}
-
-.monthCalendar .day-names {
+.monthCalendar .dayName {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   align-items: center;
 }
 
-.monthCalendar .body {
-  border: 1px solid var(--light-blue);
+.monthCalendar .dayName .week {
+  height: 36px;
+  line-height: 36px;
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: space-around;
+  color: #b7bec5;
+  font-weight: 600;
 }
 
 .monthCalendar .header .previous {
@@ -39,10 +34,10 @@
 }
 
 .monthCalendar .day {
-  font-size: 17px;
+  font-size: 14px;
+
   position: relative;
   width: calc(100% / 7);
-  height: 34px;
   display: inline-block;
   background-color: white;
   padding: 0;
@@ -55,45 +50,97 @@
 .monthCalendar .day div {
   display: inline-block;
   width: 24px;
-  height: 24px;
   position: relative;
-  color: var(--black);
   z-index: 100;
-  line-height: 20px;
+  margin-bottom: 5px;
 }
 
-.monthCalendar .day div.before {
-  color: var(--grey);
+.monthCalendar .day .date {
+  color: #7c86a2;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.monthCalendar .day div.before,
+.monthCalendar .day div.after {
+  color: #d7dae2;
+  font-weight: 500;
 }
 
 .monthCalendar .day div.selected {
-  color: palevioletred;
+  color: #d3ac4c;
   font-weight: bold;
 }
 
 .monthCalendar .day div.today {
-  background-color: var(--grey);
+  color: #526ca1;
+  font-weight: 500;
 }
 
 .monthCalendar .day .oldHours {
   font-size: 10px;
   line-height: 16px;
-  width: 20px;
+  width: 23px;
   height: 16px;
   text-align: center;
   vertical-align: top;
   border-radius: 20px;
-  background-color: khaki;
-  color: sienna;
+  background-color: #f7f8fc;
+  color: #8c96ab;
+}
+
+.monthCalendar .day .oldBefore {
+  font-size: 10px;
+  line-height: 16px;
+  width: 23px;
+  height: 16px;
+  text-align: center;
+  vertical-align: top;
+  border-radius: 20px;
+  background-color: #fefeff;
+  color: #dde0e6;
+}
+
+.monthCalendar .day .oldHoursNull {
+  line-height: 16px;
+  width: 20px;
+  height: 16px;
+  vertical-align: top;
+}
+
+.monthCalendar .day .newHours {
+  width: 23px;
+  height: 16px;
+  vertical-align: top;
+  line-height: 16px;
+  background-color: #a2b3c5;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 10px;
+}
+
+.monthCalendar .day .newHoursNull {
+  width: 23px;
+  height: 16px;
+  vertical-align: top;
+  color: transparent;
+  border-radius: 20px;
+  margin-top: 2px;
 }
 
 .monthCalendar .hourInput input:nth-child(1) {
   border: none;
-  background-color: slategray;
+  background-color: #a9bbc9;
   width: 300px;
   justify-content: center;
   color: #fff;
   padding-left: 20px;
+  margin-top: 5px;
+}
+
+.monthCalendar .hourInput input:nth-child(1)::placeholder {
+  color: #fff;
+  letter-spacing: 0.5px;
 }
 
 .monthCalendar .hourInput input:nth-child(2) {
@@ -102,7 +149,7 @@
   background-color: transparent;
   position: absolute;
   right: 12px;
-  height: 40px;
+  height: 45px;
   font-weight: 500;
 }
 
@@ -119,10 +166,43 @@
 
 .monthCalendar .triangle {
   position: absolute;
-  top: 45px;
+  top: 66.5px;
   right: 15px;
 }
 
 .monthCalendar .triangleNone {
   display: none;
+}
+
+.monthHeader {
+  width: 280px;
+  display: flex;
+  margin: 10px 0;
+  margin-left: 12px;
+  justify-content: space-between;
+}
+
+.monthHeader .changeButton {
+  display: flex;
+}
+
+.changeButton .previous,
+.changeButton .next {
+  color: #8c96ab;
+  background-color: #f7f8fc;
+  width: 26px;
+  border-radius: 40%;
+  display: flex;
+  justify-content: center;
+  height: 22px;
+  line-height: 18px;
+  align-self: center;
+  margin-left: 5px;
+}
+
+.monthHeader .current {
+  color: #7c86a2;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 600;
 }

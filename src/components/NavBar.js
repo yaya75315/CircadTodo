@@ -12,15 +12,14 @@ const NavBar = ({ title, iconStatus, setNewWorking }) => {
     <div className="navBarPosition">
       <div className="navBar">
         <h1>{title}</h1>
-        <a
-          href="###"
+        <div
           className={iconStatus}
           onClick={() => {
             setNewWorking(true);
           }}
         >
           <img src={calenderIcon} alt="icon" />
-        </a>
+        </div>
       </div>
     </div>
   );

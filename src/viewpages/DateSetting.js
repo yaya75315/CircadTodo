@@ -32,6 +32,11 @@ const DateSetting = ({ setNewWorking }) => {
   const [chooseColor, setChooseColor] = useState("yellow");
   const [selectStyle, setSelectStyle] = useState(false);
   const [hourInput, setHourInput] = useState(false);
+  const [deadlineValue, setDeadlineValue] = useState("");
+  const [newNumber, setNewNumber] = useState({});
+  const [totalNumber, setTotalNumber] = useState(0);
+  const [totalHour, setTotalHour] = useState(0);
+  const [alertFlag, setAlertFlag] = useState(false);
 
   const closeSelector = () => {
     if (selectStyle == true) {
@@ -48,9 +53,17 @@ const DateSetting = ({ setNewWorking }) => {
 
   const totalHoursValue = () => document.getElementById("filled-number").value;
 
-  const [numberSize, setNumberSize] = useState(0);
+  const [numberSize, setNumberSize] = useState("");
   const numberChange = (e) => {
     setNumberSize(e.target.value);
+  };
+
+  const deadlineChange = (e) => {
+    setDeadlineValue(e.target.value);
+  };
+
+  const totalChange = (e) => {
+    setTotalHour(e.target.value);
   };
 
   return (
@@ -65,7 +78,23 @@ const DateSetting = ({ setNewWorking }) => {
             >
               <img src={closeIcon} alt="" />
             </div>
-            <input type="submit" value="Save" />
+            <div
+              type="submit"
+              onClick={() => {
+                let sum = 0;
+                for (let item in newNumber) {
+                  sum += Number(newNumber[item]);
+                }
+                setTotalNumber(sum);
+                if (totalNumber != totalHour) {
+                  setAlertFlag(true);
+                } else {
+                  setAlertFlag(false);
+                }
+              }}
+            >
+              Save
+            </div>
           </div>
 
           <div className="eventForm">
@@ -110,12 +139,15 @@ const DateSetting = ({ setNewWorking }) => {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                onChange={deadlineChange}
+                InputProps={{ inputProps: { min: nowTime } }}
               />
             </div>
             <p>Estimated total hours</p>
             <div className="hourPicker">
               <TextField
                 id="filled-number"
+                placeholder="Type total hours"
                 type="number"
                 defaultValue="1"
                 size="small"
@@ -124,6 +156,7 @@ const DateSetting = ({ setNewWorking }) => {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                onChange={totalChange}
               />
             </div>
             <p>Set the working hours of each day</p>
@@ -133,8 +166,16 @@ const DateSetting = ({ setNewWorking }) => {
                 totalHoursValue={totalHoursValue}
                 setHourInput={setHourInput}
                 hourInput={hourInput}
+                deadlineValue={deadlineValue}
+                newNumber={newNumber}
+                setNewNumber={setNewNumber}
               />
             </div>
+            {totalNumber != totalHour && alertFlag ? (
+              <div className="alertText">
+                Please select the correct total hours
+              </div>
+            ) : null}
           </div>
         </form>
       </div>

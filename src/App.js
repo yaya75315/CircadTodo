@@ -52,12 +52,14 @@ function App() {
           <Route path="/SettingPage" component={SettingPage} />
         </Switch>
 
-        <TabBar
-          setTitleState={setTitleState}
-          title={title}
-          setNewWorking={setNewWorking}
-          newWorking={newWorking}
-        />
+        {newWorking ? null : (
+          <TabBar
+            setTitleState={setTitleState}
+            title={title}
+            setNewWorking={setNewWorking}
+            newWorking={newWorking}
+          />
+        )}
       </HashRouter>
     </div>
   );

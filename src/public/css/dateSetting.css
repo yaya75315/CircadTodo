@@ -8,17 +8,18 @@
 }
 
 .dateSettingBar {
-  padding: 25px 0;
+  padding-top: 25px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
 }
 
-.dateSettingBar input {
+.dateSettingBar div {
   color: #4a90e2;
   font-weight: 500;
   border: none;
   background-color: transparent;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .nameInput {
@@ -31,7 +32,7 @@
 .nameInput input {
   border: 0;
   border-bottom: 1px solid #979797;
-  font-size: 25px;
+  font-size: 22px;
   padding-right: 40px;
   padding-bottom: 5px;
   letter-spacing: 1px;
@@ -77,9 +78,9 @@
 .eventForm p:nth-child(4),
 .eventForm p:nth-child(6) {
   color: #286bb3;
-  font-size: 19px;
-  margin-top: 15px;
-  font-weight: 400;
+  font-size: 17px;
+  margin-top: 14px;
+  font-weight: 500;
 }
 
 .deadlinePicker,
@@ -90,4 +91,10 @@
 
 .hourPicker {
   display: flex;
+}
+
+.alertText {
+  font-size: 15px;
+  color: #e15151;
+  letter-spacing: 0.2px;
 }
