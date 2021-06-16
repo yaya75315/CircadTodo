@@ -13,37 +13,8 @@ const DatePicker = ({
   deadlineValue,
   newNumber,
   setNewNumber,
+  hours,
 }) => {
-  const hours = {
-    // 3: 3,
-    // 4: 4,
-    // 5: 2,
-    // 6: 3,
-    // 7: 2,
-    // 9: 1,
-    10: 2,
-    11: 2,
-    12: 3,
-    13: 1,
-    14: 3,
-    15: 2,
-    16: 2,
-    17: 4,
-    18: 2,
-    19: 2,
-    20: 1,
-    21: 3,
-    // 22: 1,
-    // 23: 3,
-    // 24: 2,
-    // 26: 1,
-    // 27: 2,
-    // 28: 1,
-    // 29: 1,
-    // 30: 2,
-    // 31: 2,
-  };
-  const hour = "hour";
   const [calendar, setCalendar] = useState([]);
   const [calendarValue, setCalendarValue] = useState(moment());
   const [numberSize, setNumberSize] = useState("0");
@@ -62,20 +33,6 @@ const DatePicker = ({
   const numberChange = (e) => {
     setNumberSize(e.target.value);
   };
-
-  useEffect(() => {
-    const days = calendarStart.clone().subtract(1, "day");
-    const a = [];
-    while (days.isBefore(calendarEnd, "day")) {
-      a.push(
-        Array(7)
-          .fill(0)
-          .map(() => days.add(1, "day").clone())
-      );
-    }
-    todayDate();
-    setCalendar(a);
-  }, [calendarValue]);
 
   const currMonthName = () => {
     return calendarValue.format("MMMM");
@@ -96,6 +53,20 @@ const DatePicker = ({
   const thisMonth = () => {
     return calendarValue.isSame(new Date(), "month");
   };
+
+  useEffect(() => {
+    const days = calendarStart.clone().subtract(1, "day");
+    const a = [];
+    while (days.isBefore(calendarEnd, "day")) {
+      a.push(
+        Array(7)
+          .fill(0)
+          .map(() => days.add(1, "day").clone())
+      );
+    }
+    todayDate();
+    setCalendar(a);
+  }, [calendarValue]);
 
   return (
     <div className="calendarPicker">
@@ -142,7 +113,7 @@ const DatePicker = ({
                 </div>
 
                 <div className={oldHour(day, hours)}>
-                  {hours[day.format("D").toString()]}
+                  {hours[day.format("YYYY-MM-DD")]}
                 </div>
 
                 <div
@@ -158,7 +129,9 @@ const DatePicker = ({
 
                 <img
                   className={
-                    calendarValue.isSame(day, "day") && triangleOpen
+                    calendarValue.isSame(day, "day") &&
+                    triangleOpen &&
+                    hourInput
                       ? "triangle"
                       : "triangleNone"
                   }

@@ -27,6 +27,11 @@ function App() {
   let title = "Today";
   const [titleState, setTitleState] = useState(title);
   const [newWorking, setNewWorking] = useState(false);
+  const [newNumber, setNewNumber] = useState({});
+  const [newInfo, setNewInfo] = useState({});
+  const [hours, setHours] = useState({});
+
+  // const hours = {};
 
   const iconStatus = titleState != "Today" ? "none" : "navBarIcon";
   const history = useHistory();
@@ -34,7 +39,16 @@ function App() {
   return (
     <div className="appContainer">
       <div className="add-newWorking">
-        {newWorking ? <DateSetting setNewWorking={setNewWorking} /> : null}
+        {newWorking ? (
+          <DateSetting
+            setNewWorking={setNewWorking}
+            hours={hours}
+            newNumber={newNumber}
+            setNewNumber={setNewNumber}
+            newInfo={newInfo}
+            setNewInfo={setNewInfo}
+          />
+        ) : null}
         {console.log(newWorking)}
       </div>
       <HashRouter>
@@ -47,7 +61,20 @@ function App() {
         </div>
 
         <Switch>
-          <Route path="/" exact component={HomePage} />
+          <Route
+            path="/"
+            exact
+            component={() => (
+              <HomePage
+                hours={hours}
+                newNumber={newNumber}
+                setNewNumber={setNewWorking}
+                newInfo={newInfo}
+                setNewInfo={setNewInfo}
+                setHours={setHours}
+              />
+            )}
+          />
           <Route path="/LightingPage" component={LightingPage} />
           <Route path="/SettingPage" component={SettingPage} />
         </Switch>

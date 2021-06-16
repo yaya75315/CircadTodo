@@ -19,12 +19,13 @@ export function afterDeadline(day, deadlineValue) {
 }
 
 export function oldHour(day, hours) {
-  if (oldHoursBefore(day) && hours[day.format("D").toString()] != null) {
+  if (oldHoursBefore(day) && hours[day.format("YYYY-MM-DD")] != null) {
     return "oldBefore";
-  } else if (hours[day.format("D").toString()] != null) {
+  } else if (hours[day.format("YYYY-MM-DD")] == null) {
+    return "oldHoursNull";
+  } else {
     return "oldHours";
   }
-  return "oldHoursNull";
 }
 
 export default function dayStyle(day, value, deadlineValue) {

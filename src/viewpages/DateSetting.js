@@ -8,7 +8,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import moment from "moment";
 
-const DateSetting = ({ setNewWorking }) => {
+const DateSetting = ({
+  setNewWorking,
+  hours,
+  newNumber,
+  setNewNumber,
+  newInfo,
+  setNewInfo,
+}) => {
   //以下是material-ui
   const useStyles = makeStyles((theme) => ({
     container: {
@@ -33,10 +40,10 @@ const DateSetting = ({ setNewWorking }) => {
   const [selectStyle, setSelectStyle] = useState(false);
   const [hourInput, setHourInput] = useState(false);
   const [deadlineValue, setDeadlineValue] = useState("");
-  const [newNumber, setNewNumber] = useState({});
   const [totalNumber, setTotalNumber] = useState(0);
   const [totalHour, setTotalHour] = useState(0);
   const [alertFlag, setAlertFlag] = useState(false);
+  const [nameInput, setNameInput] = useState("");
 
   const closeSelector = () => {
     if (selectStyle == true) {
@@ -53,7 +60,8 @@ const DateSetting = ({ setNewWorking }) => {
 
   const totalHoursValue = () => document.getElementById("filled-number").value;
 
-  const [numberSize, setNumberSize] = useState("");
+  const [numberSize, setNumberSize] = useState(1);
+
   const numberChange = (e) => {
     setNumberSize(e.target.value);
   };
@@ -64,6 +72,10 @@ const DateSetting = ({ setNewWorking }) => {
 
   const totalChange = (e) => {
     setTotalHour(e.target.value);
+  };
+
+  const nameChange = (e) => {
+    setNameInput(e.target.value);
   };
 
   return (
@@ -99,7 +111,11 @@ const DateSetting = ({ setNewWorking }) => {
 
           <div className="eventForm">
             <div className="nameInput">
-              <input type="text" placeholder="New event" />
+              <input
+                type="text"
+                placeholder="New event"
+                onChange={nameChange}
+              />
               <div className="colorSelector" onClick={openSelector}>
                 <div className="colorChoose">
                   <div
@@ -149,10 +165,9 @@ const DateSetting = ({ setNewWorking }) => {
                 id="filled-number"
                 placeholder="Type total hours"
                 type="number"
-                defaultValue="1"
                 size="small"
                 onInput={numberChange}
-                value={numberSize >= 24 ? 24 : numberSize}
+                value={numberSize >= 100 ? 100 : numberSize}
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -169,6 +184,9 @@ const DateSetting = ({ setNewWorking }) => {
                 deadlineValue={deadlineValue}
                 newNumber={newNumber}
                 setNewNumber={setNewNumber}
+                hours={hours}
+                newInfo={newInfo}
+                setNewInfo={setNewInfo}
               />
             </div>
             {totalNumber != totalHour && alertFlag ? (

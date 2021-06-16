@@ -11,7 +11,9 @@ function isToday(day) {
 }
 
 function NumStyle(day, hours, value) {
-  return hours[day.format("D").toString()] == null && value.isSame(day, "day");
+  return (
+    hours[day.format("YYYY-MM-DD")] === undefined && value.isSame(day, "day")
+  );
 }
 
 export default function dayStyle(day, value, hours) {

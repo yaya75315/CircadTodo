@@ -6,7 +6,14 @@ import "../public/css/homePage.css";
 import arriveHome from "../public/images/arrivehome.svg";
 import sleepTime from "../public/images/sleeptime.svg";
 
-const HomePage = () => {
+const HomePage = ({
+  hours,
+  setHours,
+  newNumber,
+  setNewNumber,
+  newInfo,
+  setNewInfo,
+}) => {
   return (
     <div className="appContent">
       <div className="container">
@@ -29,7 +36,14 @@ const HomePage = () => {
           <h2>Working time</h2>
         </div>
         {/* <WeekCalender /> */}
-        <WorkingTime />
+        <WorkingTime
+          hours={hours}
+          setHours={setHours}
+          newNumber={newNumber}
+          setNewNumber={setNewNumber}
+          newInfo={newInfo}
+          setNewInfo={setNewInfo}
+        />
       </div>
     </div>
   );

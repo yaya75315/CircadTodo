@@ -7,40 +7,81 @@ import WorkingHour from "./WorkingHour";
 import "../public/css/workingStyle.css";
 import "../public/css/common.css";
 
-function WorkingTime() {
+function WorkingTime({
+  hours,
+  setHours,
+  newNumber,
+  setNewNumber,
+  newInfo,
+  setNewInfo,
+}) {
   const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
 
-  const hours = {
-    3: 3,
-    4: 4,
-    5: 2,
-    6: 3,
-    7: 2,
-    9: 1,
-    10: 2,
-    11: 2,
-    12: 3,
-    13: 1,
-    14: 3,
-    15: 2,
-    16: 2,
-    17: 4,
-    18: 2,
-    19: 2,
-    20: 1,
-    21: 3,
-    22: 1,
-    23: 3,
-    24: 2,
-    26: 1,
-    27: 2,
-    28: 1,
-    29: 1,
-    30: 2,
-    31: 2,
+  const [oldWorkHour, setOldWorkHour] = useState({
+    "2021-06-15": [
+      {
+        name: "Paper draft for ICCE-Tw",
+        hour: 1,
+        colorId: "blue",
+      },
+    ],
+    "2021-06-16": [
+      {
+        name: "Paper draft for ICCE-Tw",
+        hour: 2,
+        colorId: "blue",
+      },
+      { name: "Paper draft for ICCE-Tw", hour: 3, colorId: "yellow" },
+    ],
+    "2021-06-17": [
+      {
+        name: "Paper draft for ICCE-Tw",
+        hour: 3,
+        colorId: "green",
+      },
+    ],
+    "2021-06-18": [
+      {
+        name: "Paper draft for ICCE-Tw",
+        hour: 5,
+        colorId: "yellow",
+      },
+    ],
+  });
+
+  const fakeNumber = {
+    ["2021-06-18"]: 3,
+    ["2021-06-17"]: 2,
+    ["2021-06-19"]: 2,
+    ["2021-06-20"]: 1,
   };
+
+  const fakeInfo = {
+    name: "Home Work",
+    colorId: "yellow",
+  };
+
+  function addEvent() {
+    for (let item in fakeNumber) {
+      let a = {};
+      a.name = fakeInfo.name;
+      a.hour = fakeNumber[item];
+      a.colorId = fakeInfo.colorId;
+      if (oldWorkHour[item] !== undefined) {
+        setOldWorkHour((e) => ({
+          ...e,
+          [item]: [...e[item], a],
+        }));
+      } else {
+        setOldWorkHour((e) => ({
+          ...e,
+          [item]: [a],
+        }));
+      }
+    }
+  }
 
   function currMonthName() {
     return value.format("MMMM");
@@ -59,6 +100,46 @@ function WorkingTime() {
 
   function thisWeek() {
     return value.isSame(new Date(), "week");
+  }
+
+  const todayFormat = () => {
+    return value.format("YYYY-MM-DD");
+  };
+
+  const list = [];
+
+  function myWork() {
+    for (let item in oldWorkHour) {
+      if (todayFormat() == item) {
+        for (let i = 0; i < oldWorkHour[item].length; i++) {
+          list.push(
+            <div>
+              <DateWork
+                backGroundColor={oldWorkHour[item][i].colorId}
+                workContent={oldWorkHour[item][i].name}
+                workHour={oldWorkHour[item][i].hour}
+              />
+            </div>
+          );
+        }
+      }
+    }
+  }
+  let h = 0;
+
+  function allHours(day) {
+    for (let item in oldWorkHour) {
+      if (day.format("YYYY-MM-DD") == item) {
+        for (let i = 0; i <= oldWorkHour[item].length; i++) {
+          if (i != oldWorkHour[item].length) {
+            h += oldWorkHour[item][i].hour;
+            hours[item] = h;
+          } else {
+            h = 0;
+          }
+        }
+      }
+    }
   }
 
   useEffect(() => {
@@ -90,6 +171,7 @@ function WorkingTime() {
                 <div className="dayContainer">
                   {week.map((day) => (
                     <div onClick={() => !beforeToday(day) && setValue(day)}>
+                      {allHours(day)}
                       <div className="day">
                         <div className={dayStyle(day, value, hours)}>
                           <div className="day-names">
@@ -98,9 +180,8 @@ function WorkingTime() {
                             </div>
                           </div>
                           {day.format("D").toString()}
-                          <WorkingHour
-                            Num={hours[day.format("D").toString()]}
-                          />
+
+                          <WorkingHour hours={hours} day={day} />
                         </div>
                       </div>
                     </div>
@@ -111,14 +192,10 @@ function WorkingTime() {
           </div>
         </div>
       </div>
-      <div className="dayWork">
+      <div className="dayWork" onClick={addEvent}>
         <div className="marginSpace"></div>
-
-        <DateWork
-          backGroundColor={"blue"}
-          workContent={"Paper draft for ICCE-Tw"}
-          workHour={2}
-        />
+        {myWork()}
+        {list}
       </div>
     </div>
   );
