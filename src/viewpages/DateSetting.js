@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../public/css/dateSetting.css";
 import "../public/css/common.css";
 import closeIcon from "../public/images/closeIcon.svg";
@@ -15,6 +15,8 @@ const DateSetting = ({
   setNewNumber,
   newInfo,
   setNewInfo,
+  oldWorkHour,
+  setOldWorkHour,
 }) => {
   //以下是material-ui
   const useStyles = makeStyles((theme) => ({
@@ -41,7 +43,6 @@ const DateSetting = ({
   const [hourInput, setHourInput] = useState(false);
   const [deadlineValue, setDeadlineValue] = useState("");
   const [totalNumber, setTotalNumber] = useState(0);
-  const [totalHour, setTotalHour] = useState(0);
   const [alertFlag, setAlertFlag] = useState(false);
   const [nameInput, setNameInput] = useState("");
 
@@ -70,13 +71,40 @@ const DateSetting = ({
     setDeadlineValue(e.target.value);
   };
 
-  const totalChange = (e) => {
-    setTotalHour(e.target.value);
-  };
-
   const nameChange = (e) => {
     setNameInput(e.target.value);
   };
+
+  function addEvent() {
+    newInfo.name = nameInput;
+    newInfo.colorId = chooseColor;
+    for (let item in newNumber) {
+      let a = {};
+      a.name = newInfo.name;
+      a.hour = Number(newNumber[item]);
+      a.colorId = newInfo.colorId;
+      if (oldWorkHour[item] !== undefined) {
+        setOldWorkHour((e) => ({
+          ...e,
+          [item]: [...e[item], a],
+        }));
+      } else {
+        setOldWorkHour((e) => ({
+          ...e,
+          [item]: [a],
+        }));
+      }
+    }
+  }
+
+  let sum = 0;
+  for (let item in newNumber) {
+    sum += Number(newNumber[item]);
+  }
+
+  useEffect(() => {
+    setTotalNumber(sum);
+  }, [sum]);
 
   return (
     <div className="dateSetting" onClick={closeSelector}>
@@ -90,18 +118,16 @@ const DateSetting = ({
             >
               <img src={closeIcon} alt="" />
             </div>
+
             <div
-              type="submit"
               onClick={() => {
-                let sum = 0;
-                for (let item in newNumber) {
-                  sum += Number(newNumber[item]);
-                }
-                setTotalNumber(sum);
-                if (totalNumber != totalHour) {
+                if (totalNumber != numberSize) {
                   setAlertFlag(true);
                 } else {
-                  setAlertFlag(false);
+                  addEvent();
+                  setNewNumber({});
+                  setNewWorking(false);
+                  setTotalNumber(0);
                 }
               }}
             >
@@ -171,9 +197,10 @@ const DateSetting = ({
                 InputLabelProps={{
                   shrink: true,
                 }}
-                onChange={totalChange}
+                // onChange={totalChange}
               />
             </div>
+
             <p>Set the working hours of each day</p>
             <div className="">
               <DatePicker
@@ -189,7 +216,7 @@ const DateSetting = ({
                 setNewInfo={setNewInfo}
               />
             </div>
-            {totalNumber != totalHour && alertFlag ? (
+            {totalNumber != numberSize && alertFlag ? (
               <div className="alertText">
                 Please select the correct total hours
               </div>

@@ -1,0 +1,31 @@
+{
+  "2021-06-15": [
+    {
+      "name": "Paper draft for ICCE-Tw",
+      "hour": 1,
+      "colorId": "blue"
+    }
+  ],
+  "2021-06-16": [
+    {
+      "name": "Paper draft for ICCE-Tw",
+      "hour": 2,
+      "colorId": "blue"
+    },
+    { "name": "Paper draft for ICCE-Tw", "hour": 3, "colorId": "blue" }
+  ],
+  "2021-06-17": [
+    {
+      "name": "Paper draft for ICCE-Tw",
+      "hour": 3,
+      "colorId": "blue"
+    }
+  ],
+  "2021-06-18": [
+    {
+      "name": "Paper draft for ICCE-Tw",
+      "hour": 1,
+      "colorId": "blue"
+    }
+  ]
+}

@@ -13,6 +13,8 @@ const HomePage = ({
   setNewNumber,
   newInfo,
   setNewInfo,
+  oldWorkHour,
+  setOldWorkHour,
 }) => {
   return (
     <div className="appContent">
@@ -43,6 +45,8 @@ const HomePage = ({
           setNewNumber={setNewNumber}
           newInfo={newInfo}
           setNewInfo={setNewInfo}
+          oldWorkHour={oldWorkHour}
+          setOldWorkHour={setOldWorkHour}
         />
       </div>
     </div>

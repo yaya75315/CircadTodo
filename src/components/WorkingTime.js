@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import buildCalendar from "./buildCal";
+
 import dayStyle, { beforeToday } from "./DayStyle";
 import DateWork from "./DateWork";
 import WorkingHour from "./WorkingHour";
@@ -9,79 +10,17 @@ import "../public/css/common.css";
 
 function WorkingTime({
   hours,
-  setHours,
+  // setHours,
   newNumber,
   setNewNumber,
   newInfo,
   setNewInfo,
+  oldWorkHour,
+  setOldWorkHour,
 }) {
   const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
-
-  const [oldWorkHour, setOldWorkHour] = useState({
-    "2021-06-15": [
-      {
-        name: "Paper draft for ICCE-Tw",
-        hour: 1,
-        colorId: "blue",
-      },
-    ],
-    "2021-06-16": [
-      {
-        name: "Paper draft for ICCE-Tw",
-        hour: 2,
-        colorId: "blue",
-      },
-      { name: "Paper draft for ICCE-Tw", hour: 3, colorId: "yellow" },
-    ],
-    "2021-06-17": [
-      {
-        name: "Paper draft for ICCE-Tw",
-        hour: 3,
-        colorId: "green",
-      },
-    ],
-    "2021-06-18": [
-      {
-        name: "Paper draft for ICCE-Tw",
-        hour: 5,
-        colorId: "yellow",
-      },
-    ],
-  });
-
-  const fakeNumber = {
-    ["2021-06-18"]: 3,
-    ["2021-06-17"]: 2,
-    ["2021-06-19"]: 2,
-    ["2021-06-20"]: 1,
-  };
-
-  const fakeInfo = {
-    name: "Home Work",
-    colorId: "yellow",
-  };
-
-  function addEvent() {
-    for (let item in fakeNumber) {
-      let a = {};
-      a.name = fakeInfo.name;
-      a.hour = fakeNumber[item];
-      a.colorId = fakeInfo.colorId;
-      if (oldWorkHour[item] !== undefined) {
-        setOldWorkHour((e) => ({
-          ...e,
-          [item]: [...e[item], a],
-        }));
-      } else {
-        setOldWorkHour((e) => ({
-          ...e,
-          [item]: [a],
-        }));
-      }
-    }
-  }
 
   function currMonthName() {
     return value.format("MMMM");
@@ -192,7 +131,7 @@ function WorkingTime({
           </div>
         </div>
       </div>
-      <div className="dayWork" onClick={addEvent}>
+      <div className="dayWork">
         <div className="marginSpace"></div>
         {myWork()}
         {list}

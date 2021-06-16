@@ -19,16 +19,19 @@ import {
   useHistory,
 } from "react-router-dom";
 
+import dataRecord from "./public/js/data.json";
+
 // import { useLocation, HashRouter } from "react-router-dom";
 
 function App() {
   let location = useLocation();
   let now_location = location.pathname;
   let title = "Today";
+  const [oldWorkHour, setOldWorkHour] = useState(dataRecord);
   const [titleState, setTitleState] = useState(title);
   const [newWorking, setNewWorking] = useState(false);
   const [newNumber, setNewNumber] = useState({});
-  const [newInfo, setNewInfo] = useState({});
+  const [newInfo, setNewInfo] = useState({ name: "", colorId: "" });
   const [hours, setHours] = useState({});
 
   // const hours = {};
@@ -47,6 +50,8 @@ function App() {
             setNewNumber={setNewNumber}
             newInfo={newInfo}
             setNewInfo={setNewInfo}
+            oldWorkHour={oldWorkHour}
+            setOldWorkHour={setOldWorkHour}
           />
         ) : null}
         {console.log(newWorking)}
@@ -72,6 +77,8 @@ function App() {
                 newInfo={newInfo}
                 setNewInfo={setNewInfo}
                 setHours={setHours}
+                oldWorkHour={oldWorkHour}
+                setOldWorkHou={setOldWorkHour}
               />
             )}
           />
