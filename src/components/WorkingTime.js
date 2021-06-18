@@ -8,19 +8,11 @@ import WorkingHour from "./WorkingHour";
 import "../public/css/workingStyle.css";
 import "../public/css/common.css";
 
-function WorkingTime({
-  hours,
-  // setHours,
-  newNumber,
-  setNewNumber,
-  newInfo,
-  setNewInfo,
-  oldWorkHour,
-  setOldWorkHour,
-}) {
+function WorkingTime({ hours, oldWorkHour, setOldWorkHour, setHours }) {
   const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
+  let h = 0;
 
   function currMonthName() {
     return value.format("MMMM");
@@ -57,6 +49,14 @@ function WorkingTime({
                 backGroundColor={oldWorkHour[item][i].colorId}
                 workContent={oldWorkHour[item][i].name}
                 workHour={oldWorkHour[item][i].hour}
+                event={oldWorkHour[item]}
+                index={i}
+                setOldWorkHour={setOldWorkHour}
+                oldWorkHour={oldWorkHour}
+                item={item}
+                hours={hours}
+                h={h}
+                setHours={setHours}
               />
             </div>
           );
@@ -64,7 +64,6 @@ function WorkingTime({
       }
     }
   }
-  let h = 0;
 
   function allHours(day) {
     for (let item in oldWorkHour) {
@@ -90,11 +89,8 @@ function WorkingTime({
       <div className="weekCalendar">
         <div className="calendar">
           <div className="header">
-            <div
-              className="previous"
-              onClick={() => !thisWeek() && setValue(prevMonth())}
-            >
-              {!thisWeek() ? String.fromCharCode(171) : null}
+            <div className="previous" onClick={() => setValue(prevMonth())}>
+              {String.fromCharCode(171)}
             </div>
             <div className="current">
               {currMonthName()}
@@ -109,7 +105,7 @@ function WorkingTime({
               {calendar.map((week) => (
                 <div className="dayContainer">
                   {week.map((day) => (
-                    <div onClick={() => !beforeToday(day) && setValue(day)}>
+                    <div onClick={() => setValue(day)}>
                       {allHours(day)}
                       <div className="day">
                         <div className={dayStyle(day, value, hours)}>

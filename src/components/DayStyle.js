@@ -17,7 +17,7 @@ function NumStyle(day, hours, value) {
 }
 
 export default function dayStyle(day, value, hours) {
-  if (beforeToday(day)) return "before";
+  // if (beforeToday(day)) return "before";
   if (NumStyle(day, hours, value)) return "selectedNull";
   if (isSelected(day, value)) return "selected";
   if (isToday(day)) return "today";

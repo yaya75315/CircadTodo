@@ -35,7 +35,7 @@ const DateSetting = ({
   //以上是material-ui
 
   //----以下是顏色選擇器
-  const colorArray = ["yellow", "blue", "green"];
+  const colorArray = ["yellow", "blue", "green", "red", "purple"];
   const classes = useStyles();
 
   const [chooseColor, setChooseColor] = useState("yellow");
@@ -45,6 +45,7 @@ const DateSetting = ({
   const [totalNumber, setTotalNumber] = useState(0);
   const [alertFlag, setAlertFlag] = useState(false);
   const [nameInput, setNameInput] = useState("");
+  const [alertNameFlag, setAlertNameFlag] = useState(false);
 
   const closeSelector = () => {
     if (selectStyle == true) {
@@ -102,6 +103,20 @@ const DateSetting = ({
     sum += Number(newNumber[item]);
   }
 
+  const list = [];
+
+  function colorList() {
+    for (let i = 0; i < colorArray.length; i++) {
+      list.push(
+        <div
+          className="colorItem"
+          id={colorArray[i]}
+          onClick={() => setChooseColor(colorArray[i])}
+        ></div>
+      );
+    }
+  }
+
   useEffect(() => {
     setTotalNumber(sum);
   }, [sum]);
@@ -123,11 +138,15 @@ const DateSetting = ({
               onClick={() => {
                 if (totalNumber != numberSize) {
                   setAlertFlag(true);
+                } else if (nameInput == "") {
+                  setAlertNameFlag(true);
                 } else {
                   addEvent();
                   setNewNumber({});
                   setNewWorking(false);
                   setTotalNumber(0);
+                  setAlertNameFlag(false);
+                  setAlertFlag(false);
                 }
               }}
             >
@@ -142,6 +161,9 @@ const DateSetting = ({
                 placeholder="New event"
                 onChange={nameChange}
               />
+              {nameInput == 0 && alertNameFlag ? (
+                <div className="nameAlert">*</div>
+              ) : null}
               <div className="colorSelector" onClick={openSelector}>
                 <div className="colorChoose">
                   <div
@@ -153,21 +175,8 @@ const DateSetting = ({
                 <div
                   className={selectStyle == true ? "colorOption" : "noneOption"}
                 >
-                  <div
-                    className="colorItem"
-                    id={colorArray[0]}
-                    onClick={() => setChooseColor(colorArray[0])}
-                  ></div>
-                  <div
-                    className="colorItem"
-                    id={colorArray[1]}
-                    onClick={() => setChooseColor(colorArray[1])}
-                  ></div>
-                  <div
-                    className="colorItem"
-                    id={colorArray[2]}
-                    onClick={() => setChooseColor(colorArray[2])}
-                  ></div>
+                  {colorList()}
+                  {list}
                 </div>
               </div>
             </div>

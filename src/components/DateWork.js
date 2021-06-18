@@ -1,11 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import "../public/css/dateWork.css";
 import noteIcon from "../public/images/noteIcon.svg";
 
-const DateWork = ({ backGroundColor, workContent, workHour }) => {
+const DateWork = ({
+  backGroundColor,
+  workContent,
+  workHour,
+  event,
+  index,
+  setOldWorkHour,
+  oldWorkHour,
+  item,
+  hours,
+  h,
+  setHours,
+}) => {
+  const [deleteFlag, setDeleteFlag] = useState(false);
+  const cloneEvent = { ...oldWorkHour };
+  const cloneHour = { ...hours };
+
+  const deleteEvent = () => {
+    cloneEvent[item].splice(index, 1);
+    //event.splice(index, 1);
+    //setOldWorkHour((e) => e[item].filter((i) => i !== index));
+    setOldWorkHour(cloneEvent);
+    console.log(oldWorkHour[item][index]);
+    for (let i = 0; i <= oldWorkHour[item].length; i++) {
+      if (i != oldWorkHour[item].length) {
+        h += oldWorkHour[item][i].hour;
+        cloneHour[item] = h;
+        setHours(cloneHour);
+      } else if (oldWorkHour[item][index] == undefined) {
+        cloneHour[item] = undefined;
+        setHours(cloneHour);
+      } else {
+        h = 0;
+      }
+    }
+  };
+
   return (
     <div className="container">
-      <div className="workContainer" id={backGroundColor}>
+      <div
+        className="workContainer"
+        id={backGroundColor}
+        onClick={() => {
+          if (deleteFlag == false) {
+            setDeleteFlag(true);
+          } else {
+            setDeleteFlag(false);
+          }
+        }}
+      >
         <div className="workArea">
           <div className="workImg">
             <img src={noteIcon} alt="" />
@@ -14,9 +60,16 @@ const DateWork = ({ backGroundColor, workContent, workHour }) => {
             <p>{workContent}</p>
           </div>
         </div>
-        <div className="timeArea">
-          <p>{workHour}</p>
-          <p>hr</p>
+        <div className="rightArea">
+          <div className="text">
+            <p>{workHour}</p>
+            <p>hr</p>
+          </div>
+          {deleteFlag ? (
+            <div className="deleteArea" onClick={deleteEvent}>
+              X
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

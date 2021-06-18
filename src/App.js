@@ -54,7 +54,6 @@ function App() {
             setOldWorkHour={setOldWorkHour}
           />
         ) : null}
-        {console.log(newWorking)}
       </div>
       <HashRouter>
         <div className="container">
@@ -78,7 +77,7 @@ function App() {
                 setNewInfo={setNewInfo}
                 setHours={setHours}
                 oldWorkHour={oldWorkHour}
-                setOldWorkHou={setOldWorkHour}
+                setOldWorkHour={setOldWorkHour}
               />
             )}
           />

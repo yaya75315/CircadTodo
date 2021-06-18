@@ -164,12 +164,14 @@ const DatePicker = ({
                   setHourInput(false);
                   setNumberSize("");
                   setTriangleOpen(false);
-                  if (numberSize >= 0) {
+                  if (numberSize > 0) {
                     setNewHourStyle("newHours");
                     setNewNumber({
                       ...newNumber,
                       [dateSave]: document.getElementById("hourInput").value,
                     });
+                  } else if (numberSize == 0) {
+                    delete newNumber[dateSave];
                   }
                 }}
               />

@@ -28,7 +28,7 @@ const LightingPage = () => {
     <div className={"lightingContainer"}>
       <div className={"container"}>
         <div className={"itemContainer"}>
-          <p>Light Switch</p>
+          <p>Light Power</p>
           <div className={"switchButton"}>
             <FormGroup>
               <ThemeProvider theme={theme}>
@@ -47,7 +47,9 @@ const LightingPage = () => {
           </div>
         </div>
       </div>
-      <ItemLabel itemName={"Light Hue"} itemContent={"6500K"} />
+      <ItemLabel itemName={"Light CCT"} itemContent={"6500K"} />
+      <ItemLabel itemName={"Light bright"} itemContent={"100%"} />
+      <ItemLabel itemName={"Next Change"} itemContent={"After 10min"} />
     </div>
   );
 };
