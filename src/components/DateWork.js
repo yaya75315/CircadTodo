@@ -6,7 +6,6 @@ const DateWork = ({
   backGroundColor,
   workContent,
   workHour,
-  event,
   index,
   setOldWorkHour,
   oldWorkHour,
@@ -21,8 +20,6 @@ const DateWork = ({
 
   const deleteEvent = () => {
     cloneEvent[item].splice(index, 1);
-    //event.splice(index, 1);
-    //setOldWorkHour((e) => e[item].filter((i) => i !== index));
     setOldWorkHour(cloneEvent);
     console.log(oldWorkHour[item][index]);
     for (let i = 0; i <= oldWorkHour[item].length; i++) {

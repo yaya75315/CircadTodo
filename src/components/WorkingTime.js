@@ -49,7 +49,6 @@ function WorkingTime({ hours, oldWorkHour, setOldWorkHour, setHours }) {
                 backGroundColor={oldWorkHour[item][i].colorId}
                 workContent={oldWorkHour[item][i].name}
                 workHour={oldWorkHour[item][i].hour}
-                event={oldWorkHour[item]}
                 index={i}
                 setOldWorkHour={setOldWorkHour}
                 oldWorkHour={oldWorkHour}
@@ -129,8 +128,10 @@ function WorkingTime({ hours, oldWorkHour, setOldWorkHour, setHours }) {
       </div>
       <div className="dayWork">
         <div className="marginSpace"></div>
-        {myWork()}
-        {list}
+        <div className="workingSchedule">
+          {myWork()}
+          {list}
+        </div>
       </div>
     </div>
   );

@@ -8,10 +8,9 @@
 
 .dayWork {
   width: 100%;
-  padding: 30px 0;
+  padding: 15px 0;
   background-color: #fff;
   box-shadow: 0px -15px 30px -15px #e5e8ea;
-  overflow: auto;
   height: 270px;
 }
 
@@ -166,4 +165,13 @@ div.selected .hour {
 .hourArea {
   display: flex;
   justify-content: space-around;
+}
+
+.workingSchedule {
+  overflow: auto;
+  height: 100%;
+}
+
+.marginSpace {
+  margin: 15px 0;
 }
