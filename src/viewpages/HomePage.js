@@ -15,6 +15,7 @@ const HomePage = ({
   setNewInfo,
   oldWorkHour,
   setOldWorkHour,
+  language,
 }) => {
   return (
     <div className="appContent">
@@ -22,20 +23,20 @@ const HomePage = ({
         <div className="stateArea">
           <StatusDisplay
             iconImg={arriveHome}
-            statusName={"Arrive time"}
+            statusName={language == "English" ? "Arrive time" : "到達時間"}
             time={"19:20"}
           />
           <div className="spacingBlock"></div>
           <StatusDisplay
             iconImg={sleepTime}
-            statusName={"Sleep time"}
+            statusName={language == "English" ? "Sleep time" : "睡覺時間"}
             time={"0:00"}
           />
         </div>
       </div>
       <div className="calenderArea">
         <div className="container">
-          <h2>Working time</h2>
+          <h2>{language == "English" ? "Working time" : "工作時間"}</h2>
         </div>
         {/* <WeekCalender /> */}
         <WorkingTime
@@ -47,6 +48,7 @@ const HomePage = ({
           setNewInfo={setNewInfo}
           oldWorkHour={oldWorkHour}
           setOldWorkHour={setOldWorkHour}
+          language={language}
         />
       </div>
     </div>

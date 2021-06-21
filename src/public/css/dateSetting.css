@@ -30,7 +30,8 @@
 }
 
 .nameInput input {
-  border: 0;
+  border: none;
+  border-radius: none;
   border-bottom: 1px solid #979797;
   font-size: 22px;
   padding-right: 40px;
@@ -38,6 +39,7 @@
   letter-spacing: 1px;
   color: #000;
   outline: none;
+  width: 250px;
 }
 .nameInput input::placeholder {
   color: #a9bbc9;
@@ -80,7 +82,7 @@
   color: #286bb3;
   font-size: 17px;
   margin-top: 14px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .deadlinePicker,
@@ -94,11 +96,20 @@
 }
 
 .alertText {
-  font-size: 15px;
+  font-size: 12px;
   color: #e15151;
   letter-spacing: 0.2px;
+  margin-top: 5px;
 }
 
 .nameAlert {
   color: #e15151;
+}
+
+.prompt {
+  color: #727a83;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 5px;
+  letter-spacing: 0.2px;
 }

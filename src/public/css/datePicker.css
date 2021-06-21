@@ -154,9 +154,9 @@
 }
 
 .monthCalendar .hourInput {
+  border-radius: none;
   position: relative;
   display: flex;
-
   height: 40px;
 }
 
@@ -166,8 +166,9 @@
 
 .monthCalendar .triangle {
   position: absolute;
-  top: 66.5px;
+  top: 70px;
   right: 15px;
+  width: 15px;
 }
 
 .monthCalendar .triangleNone {

@@ -17,6 +17,7 @@ const DateSetting = ({
   setNewInfo,
   oldWorkHour,
   setOldWorkHour,
+  language,
 }) => {
   //以下是material-ui
   const useStyles = makeStyles((theme) => ({
@@ -158,7 +159,7 @@ const DateSetting = ({
             <div className="nameInput">
               <input
                 type="text"
-                placeholder="New event"
+                placeholder={language == "English" ? "New Event" : "新事件名稱"}
                 onChange={nameChange}
               />
               {nameInput == 0 && alertNameFlag ? (
@@ -180,7 +181,7 @@ const DateSetting = ({
                 </div>
               </div>
             </div>
-            <p>Deadline</p>
+            <p>{language == "English" ? "Deadline" : "最後期限"}</p>
             <div className="deadlinePicker">
               <TextField
                 id="datetime-local"
@@ -194,7 +195,9 @@ const DateSetting = ({
                 InputProps={{ inputProps: { min: nowTime } }}
               />
             </div>
-            <p>Estimated total hours</p>
+            <p>
+              {language == "English" ? "Estimated total hours" : "估計總時數"}
+            </p>
             <div className="hourPicker">
               <TextField
                 id="filled-number"
@@ -206,12 +209,33 @@ const DateSetting = ({
                 InputLabelProps={{
                   shrink: true,
                 }}
+                inputmode="numeric"
                 // onChange={totalChange}
               />
             </div>
 
-            <p>Set the working hours of each day</p>
+            <p>
+              {language == "English"
+                ? "Set the working hours of each day"
+                : "設定每天的工作時數"}
+            </p>
+
             <div className="">
+              <p
+                className="
+prompt"
+              >
+                {language == "English"
+                  ? "Click the date you want to enter the number of days."
+                  : "點擊日期以輸入時數"}
+              </p>
+              {totalNumber != numberSize && alertFlag ? (
+                <div className="alertText">
+                  {language == "English"
+                    ? "Please enter the correct total hours."
+                    : "請輸入正確的加總時數"}
+                </div>
+              ) : null}
               <DatePicker
                 deadLineValue={deadLineValue}
                 totalHoursValue={totalHoursValue}
@@ -223,13 +247,9 @@ const DateSetting = ({
                 hours={hours}
                 newInfo={newInfo}
                 setNewInfo={setNewInfo}
+                language={language}
               />
             </div>
-            {totalNumber != numberSize && alertFlag ? (
-              <div className="alertText">
-                Please select the correct total hours
-              </div>
-            ) : null}
           </div>
         </form>
       </div>

@@ -2,9 +2,27 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  position: relative;
 }
 
-.itemContainer p:nth-child(2) {
+.itemContainer p:nth-child(2),
+.normal {
   color: #00c8d3;
   padding-right: 22px;
+}
+
+.itemContainer .selector {
+  position: absolute;
+  right: 22px;
+}
+
+.selector select {
+  border: none;
+  font-size: 16px;
+  color: #00c8d3;
+  background-color: #fbfbfb;
+}
+
+.itemContainer .normalSelect {
+  color: transparent !important;
 }

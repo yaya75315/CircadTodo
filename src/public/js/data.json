@@ -4,6 +4,10 @@
       "name": "Paper draft for ICCE-Tw",
       "hour": 1,
       "colorId": "blue"
+    }, {
+      "name": "Online course",
+      "hour": 3,
+      "colorId": "green"
     }
   ],
   "2021-06-16": [
@@ -11,6 +15,10 @@
       "name": "Paper draft for ICCE-Tw",
       "hour": 2,
       "colorId": "blue"
+    },{
+      "name": "Online course",
+      "hour": 1,
+      "colorId": "green"
     }
   ],
   "2021-06-17": [
@@ -25,7 +33,12 @@
       "name": "Paper draft for ICCE-Tw",
       "hour": 1,
       "colorId": "blue"
+    },{
+      "name": "Online course",
+      "hour": 2,
+      "colorId": "green"
     }
+
   ],"2021-06-19": [
     {
       "name": "Paper draft for ICCE-Tw",
@@ -37,6 +50,16 @@
       "name": "Paper draft for ICCE-Tw",
       "hour": 3,
       "colorId": "blue"
+    },{
+      "name": "Online course",
+      "hour": 3,
+      "colorId": "green"
+    }
+  ],"2021-06-21":[
+    {
+      "name": "Online course",
+      "hour": 3,
+      "colorId": "green"
     }
   ]
 }

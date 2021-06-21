@@ -8,7 +8,13 @@ import WorkingHour from "./WorkingHour";
 import "../public/css/workingStyle.css";
 import "../public/css/common.css";
 
-function WorkingTime({ hours, oldWorkHour, setOldWorkHour, setHours }) {
+function WorkingTime({
+  hours,
+  oldWorkHour,
+  setOldWorkHour,
+  setHours,
+  language,
+}) {
   const [calendar, setCalendar] = useState([]);
   const [value, setValue] = useState(moment());
   const weeks = ["S", "M", "T", "W", "T", "F", "S"];
@@ -56,6 +62,7 @@ function WorkingTime({ hours, oldWorkHour, setOldWorkHour, setHours }) {
                 hours={hours}
                 h={h}
                 setHours={setHours}
+                language={language}
               />
             </div>
           );
@@ -115,7 +122,11 @@ function WorkingTime({ hours, oldWorkHour, setOldWorkHour, setHours }) {
                           </div>
                           {day.format("D").toString()}
 
-                          <WorkingHour hours={hours} day={day} />
+                          <WorkingHour
+                            hours={hours}
+                            day={day}
+                            language={language}
+                          />
                         </div>
                       </div>
                     </div>

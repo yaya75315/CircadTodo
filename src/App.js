@@ -33,6 +33,7 @@ function App() {
   const [newNumber, setNewNumber] = useState({});
   const [newInfo, setNewInfo] = useState({ name: "", colorId: "" });
   const [hours, setHours] = useState({});
+  const [language, setLanguage] = useState("English");
 
   // const hours = {};
 
@@ -52,6 +53,7 @@ function App() {
             setNewInfo={setNewInfo}
             oldWorkHour={oldWorkHour}
             setOldWorkHour={setOldWorkHour}
+            language={language}
           />
         ) : null}
       </div>
@@ -61,6 +63,7 @@ function App() {
             title={titleState}
             iconStatus={iconStatus}
             setNewWorking={setNewWorking}
+            language={language}
           />
         </div>
 
@@ -78,11 +81,21 @@ function App() {
                 setHours={setHours}
                 oldWorkHour={oldWorkHour}
                 setOldWorkHour={setOldWorkHour}
+                language={language}
               />
             )}
           />
-          <Route path="/LightingPage" component={LightingPage} />
-          <Route path="/SettingPage" component={SettingPage} />
+          <Route
+            path="/LightingPage"
+            component={() => <LightingPage language={language} />}
+          />
+
+          <Route
+            path="/SettingPage"
+            component={() => (
+              <SettingPage language={language} setLanguage={setLanguage} />
+            )}
+          />
         </Switch>
 
         {newWorking ? null : (
@@ -91,6 +104,8 @@ function App() {
             title={title}
             setNewWorking={setNewWorking}
             newWorking={newWorking}
+            language={language}
+            setLanguage={setLanguage}
           />
         )}
       </HashRouter>

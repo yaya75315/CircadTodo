@@ -14,6 +14,7 @@ const DatePicker = ({
   newNumber,
   setNewNumber,
   hours,
+  language,
 }) => {
   const [calendar, setCalendar] = useState([]);
   const [calendarValue, setCalendarValue] = useState(moment());
@@ -151,15 +152,35 @@ const DatePicker = ({
                 type="number"
                 id="hourInput"
                 onInput={numberChange}
-                placeholder="Type working hours"
+                placeholder={
+                  language == "English" ? "Type working hours" : "輸入工作時數"
+                }
                 value={numberSize > 9 && numberSize ? 9 : numberSize}
                 min="0"
                 max="9"
+                onKeyPress={(e) => {
+                  console.log("1");
+                  if (e.key === "Enter") {
+                    console.log("1");
+                    setHourInput(false);
+                    setNumberSize("");
+                    setTriangleOpen(false);
+                    if (numberSize > 0) {
+                      setNewHourStyle("newHours");
+                      setNewNumber({
+                        ...newNumber,
+                        [dateSave]: document.getElementById("hourInput").value,
+                      });
+                    } else if (numberSize == 0) {
+                      delete newNumber[dateSave];
+                    }
+                  }
+                }}
               />
 
               <input
                 type="button"
-                value="OK"
+                value={language == "English" ? "OK" : "完成"}
                 onClick={() => {
                   setHourInput(false);
                   setNumberSize("");

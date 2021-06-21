@@ -13,6 +13,7 @@ const DateWork = ({
   hours,
   h,
   setHours,
+  language,
 }) => {
   const [deleteFlag, setDeleteFlag] = useState(false);
   const cloneEvent = { ...oldWorkHour };
@@ -60,7 +61,7 @@ const DateWork = ({
         <div className="rightArea">
           <div className="text">
             <p>{workHour}</p>
-            <p>hr</p>
+            <p>{language == "English" ? "hr" : "小時"}</p>
           </div>
           {deleteFlag ? (
             <div className="deleteArea" onClick={deleteEvent}>

@@ -8,7 +8,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
-const LightingPage = () => {
+const LightingPage = ({ language }) => {
   const theme = createMuiTheme({
     palette: {
       secondary: {
@@ -28,7 +28,7 @@ const LightingPage = () => {
     <div className={"lightingContainer"}>
       <div className={"container"}>
         <div className={"itemContainer"}>
-          <p>Light Power</p>
+          <p>{language == "English" ? "Light Power" : "燈光開關"}</p>
           <div className={"switchButton"}>
             <FormGroup>
               <ThemeProvider theme={theme}>
@@ -47,9 +47,19 @@ const LightingPage = () => {
           </div>
         </div>
       </div>
-      <ItemLabel itemName={"Light CCT"} itemContent={"6500K"} />
-      <ItemLabel itemName={"Light bright"} itemContent={"100%"} />
-      <ItemLabel itemName={"Next Change"} itemContent={"After 10min"} />
+
+      <ItemLabel
+        itemName={language == "English" ? "Light CCT" : "燈光色溫"}
+        itemContent={"6500K"}
+      />
+      <ItemLabel
+        itemName={language == "English" ? "Light Bright" : "燈光亮度"}
+        itemContent={"100%"}
+      />
+      <ItemLabel
+        itemName={language == "English" ? "Next Change" : "下一次變換"}
+        itemContent={"After 10min"}
+      />
     </div>
   );
 };
