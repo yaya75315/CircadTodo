@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Circadian-App",
+  "name": "Circadian-App To-do list App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -16,7 +16,12 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
-    }
+    },
+    {
+    "src": "favicon.ico",
+    "sizes": "144x144",
+    "type": "image/png"
+}
   ],
   "start_url": ".",
   "display": "standalone",
