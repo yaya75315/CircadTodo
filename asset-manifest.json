@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/papaer-test/static/css/main.35caef87.chunk.css",
-    "main.js": "/papaer-test/static/js/main.99004ced.chunk.js",
-    "main.js.map": "/papaer-test/static/js/main.99004ced.chunk.js.map",
+    "main.js": "/papaer-test/static/js/main.2c53d8b1.chunk.js",
+    "main.js.map": "/papaer-test/static/js/main.2c53d8b1.chunk.js.map",
     "runtime-main.js": "/papaer-test/static/js/runtime-main.dc98a919.js",
     "runtime-main.js.map": "/papaer-test/static/js/runtime-main.dc98a919.js.map",
     "static/css/2.8cebfa1f.chunk.css": "/papaer-test/static/css/2.8cebfa1f.chunk.css",
@@ -32,6 +32,6 @@
     "static/css/2.8cebfa1f.chunk.css",
     "static/js/2.47bc20a0.chunk.js",
     "static/css/main.35caef87.chunk.css",
-    "static/js/main.99004ced.chunk.js"
+    "static/js/main.2c53d8b1.chunk.js"
   ]
 }
