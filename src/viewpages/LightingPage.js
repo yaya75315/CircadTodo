@@ -7,6 +7,7 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
+import { Online, Offline } from "react-detect-offline";
 
 const LightingPage = ({ language }) => {
   const theme = createMuiTheme({
@@ -26,40 +27,45 @@ const LightingPage = ({ language }) => {
 
   return (
     <div className={"lightingContainer"}>
-      <div className={"container"}>
-        <div className={"itemContainer"}>
-          <p>{language == "English" ? "Light Power" : "燈光開關"}</p>
-          <div className={"switchButton"}>
-            <FormGroup>
-              <ThemeProvider theme={theme}>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      size="small"
-                      checked={checked}
-                      onChange={toggleChecked}
-                      color="secondary"
-                    />
-                  }
-                />
-              </ThemeProvider>
-            </FormGroup>
+      <Online>
+        <div className={"container"}>
+          <div className={"itemContainer"}>
+            <p>{language == "English" ? "Light Power" : "燈光開關"}</p>
+            <div className={"switchButton"}>
+              <FormGroup>
+                <ThemeProvider theme={theme}>
+                  <FormControlLabel
+                    control={
+                      <Switch
+                        size="small"
+                        checked={checked}
+                        onChange={toggleChecked}
+                        color="secondary"
+                      />
+                    }
+                  />
+                </ThemeProvider>
+              </FormGroup>
+            </div>
           </div>
         </div>
-      </div>
 
-      <ItemLabel
-        itemName={language == "English" ? "Light CCT" : "燈光色溫"}
-        itemContent={"6500K"}
-      />
-      <ItemLabel
-        itemName={language == "English" ? "Light Bright" : "燈光亮度"}
-        itemContent={"100%"}
-      />
-      <ItemLabel
-        itemName={language == "English" ? "Next Change" : "下一次變換"}
-        itemContent={"After 10min"}
-      />
+        <ItemLabel
+          itemName={language == "English" ? "Light CCT" : "燈光色溫"}
+          itemContent={"6500K"}
+        />
+        <ItemLabel
+          itemName={language == "English" ? "Light Bright" : "燈光亮度"}
+          itemContent={"100%"}
+        />
+        <ItemLabel
+          itemName={language == "English" ? "Next Change" : "下一次變換"}
+          itemContent={"After 10min"}
+        />
+      </Online>
+      <Offline>
+        <p className="offline">請將手機連上網路後使用</p>
+      </Offline>
     </div>
   );
 };

@@ -155,13 +155,13 @@ const DatePicker = ({
                 placeholder={
                   language == "English" ? "Type working hours" : "輸入工作時數"
                 }
-                value={numberSize > 9 && numberSize ? 9 : numberSize}
+                value={numberSize > 24 && numberSize ? 24 : numberSize}
                 min="0"
-                max="9"
+                max="24"
                 onKeyPress={(e) => {
-                  console.log("1");
+                  console.log(e.key);
                   if (e.key === "Enter") {
-                    console.log("1");
+                    console.log(e.key);
                     setHourInput(false);
                     setNumberSize("");
                     setTriangleOpen(false);

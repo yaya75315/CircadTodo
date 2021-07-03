@@ -130,6 +130,8 @@ const DateSetting = ({
             <div
               onClick={() => {
                 setNewWorking(false);
+                setNewNumber({});
+                setTotalNumber(0);
               }}
             >
               <img src={closeIcon} alt="" />

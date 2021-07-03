@@ -24,7 +24,7 @@ const HomePage = ({
           <StatusDisplay
             iconImg={arriveHome}
             statusName={language == "English" ? "Arrive time" : "到達時間"}
-            time={"19:20"}
+            time={"18:00"}
           />
           <div className="spacingBlock"></div>
           <StatusDisplay

@@ -3,7 +3,6 @@ import "./App.css";
 import "./public/css/common.css";
 import NavBar from "./components/NavBar";
 import TabBar from "./components/TabBar";
-
 import React, { useState } from "react";
 
 import HomePage from "./viewpages/HomePage";
@@ -33,7 +32,7 @@ function App() {
   const [newNumber, setNewNumber] = useState({});
   const [newInfo, setNewInfo] = useState({ name: "", colorId: "" });
   const [hours, setHours] = useState({});
-  const [language, setLanguage] = useState("English");
+  const [language, setLanguage] = useState("Chinese");
 
   // const hours = {};
 
@@ -57,6 +56,7 @@ function App() {
           />
         ) : null}
       </div>
+
       <HashRouter>
         <div className="container">
           <NavBar
