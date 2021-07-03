@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/papaer-test/static/css/main.f47378dc.chunk.css",
-    "main.js": "/papaer-test/static/js/main.dec2a04f.chunk.js",
-    "main.js.map": "/papaer-test/static/js/main.dec2a04f.chunk.js.map",
-    "runtime-main.js": "/papaer-test/static/js/runtime-main.dc98a919.js",
-    "runtime-main.js.map": "/papaer-test/static/js/runtime-main.dc98a919.js.map",
+    "main.js": "/papaer-test/static/js/main.6abc1aef.chunk.js",
+    "main.js.map": "/papaer-test/static/js/main.6abc1aef.chunk.js.map",
+    "runtime-main.js": "/papaer-test/static/js/runtime-main.0b928cdd.js",
+    "runtime-main.js.map": "/papaer-test/static/js/runtime-main.0b928cdd.js.map",
     "static/css/2.8cebfa1f.chunk.css": "/papaer-test/static/css/2.8cebfa1f.chunk.css",
-    "static/js/2.47bc20a0.chunk.js": "/papaer-test/static/js/2.47bc20a0.chunk.js",
-    "static/js/2.47bc20a0.chunk.js.map": "/papaer-test/static/js/2.47bc20a0.chunk.js.map",
-    "static/js/3.d48b7cbd.chunk.js": "/papaer-test/static/js/3.d48b7cbd.chunk.js",
-    "static/js/3.d48b7cbd.chunk.js.map": "/papaer-test/static/js/3.d48b7cbd.chunk.js.map",
+    "static/js/2.bd319267.chunk.js": "/papaer-test/static/js/2.bd319267.chunk.js",
+    "static/js/2.bd319267.chunk.js.map": "/papaer-test/static/js/2.bd319267.chunk.js.map",
+    "static/js/3.603d84c6.chunk.js": "/papaer-test/static/js/3.603d84c6.chunk.js",
+    "static/js/3.603d84c6.chunk.js.map": "/papaer-test/static/js/3.603d84c6.chunk.js.map",
     "index.html": "/papaer-test/index.html",
     "static/css/2.8cebfa1f.chunk.css.map": "/papaer-test/static/css/2.8cebfa1f.chunk.css.map",
     "static/css/main.f47378dc.chunk.css.map": "/papaer-test/static/css/main.f47378dc.chunk.css.map",
-    "static/js/2.47bc20a0.chunk.js.LICENSE.txt": "/papaer-test/static/js/2.47bc20a0.chunk.js.LICENSE.txt",
+    "static/js/2.bd319267.chunk.js.LICENSE.txt": "/papaer-test/static/js/2.bd319267.chunk.js.LICENSE.txt",
     "static/media/arrivehome.f12228d7.svg": "/papaer-test/static/media/arrivehome.f12228d7.svg",
     "static/media/calender-n.89033f31.svg": "/papaer-test/static/media/calender-n.89033f31.svg",
     "static/media/closeIcon.e58076b4.svg": "/papaer-test/static/media/closeIcon.e58076b4.svg",
@@ -28,10 +28,10 @@
     "static/media/workIcon-p.05741dfe.svg": "/papaer-test/static/media/workIcon-p.05741dfe.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.dc98a919.js",
+    "static/js/runtime-main.0b928cdd.js",
     "static/css/2.8cebfa1f.chunk.css",
-    "static/js/2.47bc20a0.chunk.js",
+    "static/js/2.bd319267.chunk.js",
     "static/css/main.f47378dc.chunk.css",
-    "static/js/main.dec2a04f.chunk.js"
+    "static/js/main.6abc1aef.chunk.js"
   ]
 }
