@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/papaer-test/static/css/main.52ba67af.chunk.css",
+    "main.css": "/papaer-test/static/css/main.35967594.chunk.css",
     "main.js": "/papaer-test/static/js/main.54a74e41.chunk.js",
     "main.js.map": "/papaer-test/static/js/main.54a74e41.chunk.js.map",
     "runtime-main.js": "/papaer-test/static/js/runtime-main.0b928cdd.js",
@@ -14,7 +14,7 @@
     "service-worker.js": "/papaer-test/service-worker.js",
     "service-worker.js.map": "/papaer-test/service-worker.js.map",
     "static/css/2.8cebfa1f.chunk.css.map": "/papaer-test/static/css/2.8cebfa1f.chunk.css.map",
-    "static/css/main.52ba67af.chunk.css.map": "/papaer-test/static/css/main.52ba67af.chunk.css.map",
+    "static/css/main.35967594.chunk.css.map": "/papaer-test/static/css/main.35967594.chunk.css.map",
     "static/js/2.bd319267.chunk.js.LICENSE.txt": "/papaer-test/static/js/2.bd319267.chunk.js.LICENSE.txt",
     "static/media/arrivehome.f12228d7.svg": "/papaer-test/static/media/arrivehome.f12228d7.svg",
     "static/media/calender-n.89033f31.svg": "/papaer-test/static/media/calender-n.89033f31.svg",
@@ -33,7 +33,7 @@
     "static/js/runtime-main.0b928cdd.js",
     "static/css/2.8cebfa1f.chunk.css",
     "static/js/2.bd319267.chunk.js",
-    "static/css/main.52ba67af.chunk.css",
+    "static/css/main.35967594.chunk.css",
     "static/js/main.54a74e41.chunk.js"
   ]
 }
