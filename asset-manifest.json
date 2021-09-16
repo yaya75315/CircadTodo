@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/CircadTodo/static/css/main.a9fb4eb0.chunk.css",
-    "main.js": "/CircadTodo/static/js/main.ef698a78.chunk.js",
-    "main.js.map": "/CircadTodo/static/js/main.ef698a78.chunk.js.map",
+    "main.js": "/CircadTodo/static/js/main.ad4155c1.chunk.js",
+    "main.js.map": "/CircadTodo/static/js/main.ad4155c1.chunk.js.map",
     "runtime-main.js": "/CircadTodo/static/js/runtime-main.ce4a8b9b.js",
     "runtime-main.js.map": "/CircadTodo/static/js/runtime-main.ce4a8b9b.js.map",
     "static/css/2.8cebfa1f.chunk.css": "/CircadTodo/static/css/2.8cebfa1f.chunk.css",
@@ -34,6 +34,6 @@
     "static/css/2.8cebfa1f.chunk.css",
     "static/js/2.bd319267.chunk.js",
     "static/css/main.a9fb4eb0.chunk.css",
-    "static/js/main.ef698a78.chunk.js"
+    "static/js/main.ad4155c1.chunk.js"
   ]
 }
