@@ -1,6 +1,9 @@
 .dateSetting {
+  position: absolute;
   background-color: #fff;
   height: 100vh;
+  left:0;
+  width: 100%;
 }
 
 .noDateSetting {

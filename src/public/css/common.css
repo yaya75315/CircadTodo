@@ -19,7 +19,7 @@ div::-webkit-scrollbar {
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 
 .appContainer {
-  width: 100%;
+  max-width: 400px;
   height: 100vh;
   background-color: #fbfbfb;
   margin: 0 auto;

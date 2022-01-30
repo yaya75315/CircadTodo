@@ -8,6 +8,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import { Online, Offline } from "react-detect-offline";
+import { changeState } from "../public/js/lightingRequest";
 
 const LightingPage = ({ language }) => {
   const theme = createMuiTheme({
@@ -24,10 +25,15 @@ const LightingPage = ({ language }) => {
   const toggleChecked = () => {
     setChecked((prev) => !prev);
   };
+  const url =
+    "http://192.168.0.100/api/GQamInJuTeulD9-MUzuBIp8uGEsjTfYiCbJx2n95/lights/1/state";
 
   return (
     <div className={"lightingContainer"}>
       <Online>
+        <div className="lightingRequest">
+          <p>請先連結至專用網路，才能有效進行以下操作</p>
+        </div>
         <div className={"container"}>
           <div className={"itemContainer"}>
             <p>{language == "English" ? "Light Power" : "燈光開關"}</p>

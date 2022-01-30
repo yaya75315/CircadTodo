@@ -4,7 +4,7 @@ import "../public/css/settingPage.css";
 import "../public/css/common.css";
 
 const SettingPage = ({ language, setLanguage }) => {
-  const connectState = "Linked";
+  const connectState = "Not Linked";
 
   return (
     <div className="settingPage">
